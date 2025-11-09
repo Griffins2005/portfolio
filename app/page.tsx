@@ -198,41 +198,29 @@ export default function Home() {
             
             {/* Skills Cards */}
             <div className="grid grid-cols-2 gap-8 mb-20">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="p-8 bg-red-50 dark:bg-gray-900 border border-red-200 dark:border-gray-800 rounded-lg"
-              >
+              <div className="p-8 bg-red-50 dark:bg-gray-900 border border-red-200 dark:border-gray-800 rounded-lg">
                 <Code className="w-10 h-10 text-red-700 dark:text-red-600 mb-4" />
                 <h3 className="font-semibold text-lg mb-3 text-gray-900 dark:text-gray-100">Full-Stack Dev</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">React, Django, Next.js</p>
-              </motion.div>
+              </div>
               
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="p-8 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg"
-              >
+              <div className="p-8 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg">
                 <Database className="w-10 h-10 text-red-700 dark:text-red-600 mb-4" />
                 <h3 className="font-semibold text-lg mb-3 text-gray-900 dark:text-gray-100">Data Science</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Python, ML, Analytics</p>
-              </motion.div>
+              </div>
               
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="p-8 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg"
-              >
+              <div className="p-8 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg">
                 <Palette className="w-10 h-10 text-red-700 dark:text-red-600 mb-4" />
                 <h3 className="font-semibold text-lg mb-3 text-gray-900 dark:text-gray-100">UX/Design</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Figma, Accessibility</p>
-              </motion.div>
+              </div>
               
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="p-8 bg-red-50 dark:bg-gray-900 border border-red-200 dark:border-gray-800 rounded-lg"
-              >
+              <div className="p-8 bg-red-50 dark:bg-gray-900 border border-red-200 dark:border-gray-800 rounded-lg">
                 <Globe className="w-10 h-10 text-red-700 dark:text-red-600 mb-4" />
                 <h3 className="font-semibold text-lg mb-3 text-gray-900 dark:text-gray-100">Blockchain</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Solidity, Web3.js</p>
-              </motion.div>
+              </div>
             </div>
             
             {/* Values */}
@@ -267,10 +255,7 @@ export default function Home() {
               </h3>
               <div className="space-y-6">
               {/* AI Ignite Fellow */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-red-800 dark:text-red-600">AI4ALL</h3>
@@ -295,13 +280,10 @@ export default function Home() {
                     Conduct applied research exploring responsible AI practices and data ethics in real-world applications
                   </li>
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Teaching Assistant */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell CIS</h3>
@@ -326,13 +308,10 @@ export default function Home() {
                     Mentor students in problem-solving approaches and clean coding practices, significantly improving their technical proficiency
                   </li>
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Craiive Intern */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Craiive</h3>
@@ -357,13 +336,10 @@ export default function Home() {
                     Designed intuitive UX and implemented responsive frontend components, contributing to product-market fit validation
                   </li>
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Capital One */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Capital One</h3>
@@ -388,13 +364,10 @@ export default function Home() {
                     Gained valuable insights into analytics-driven decision-making, customer-first product development, and Capital One's innovative culture
                   </li>
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Cornell AMRC */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell AMRC</h3>
@@ -423,13 +396,10 @@ export default function Home() {
                     Champion accessibility and inclusion, directly impacting students with disabilities' academic success at Cornell
                   </li>
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Codsoft */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-red-800 dark:text-red-600">CodSoft</h3>
@@ -450,13 +420,10 @@ export default function Home() {
                     Demonstrated proficiency in full-stack development using React.js, Node.js, Express.js, MongoDB, and modern web technologies
                   </li>
                 </ul>
-              </motion.div>
+              </div>
 
               {/* Power Learn Project */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Power Learn Project</h3>
@@ -481,7 +448,39 @@ export default function Home() {
                     Mastered efficient Django backends and Dart frontends optimized for real-world deployment and user engagement
                   </li>
                 </ul>
-              </motion.div>
+              </div>
+
+              {/* DirectEd Development Foundation */}
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">DirectEd Development Foundation</h3>
+                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Full Stack Web Development</p>
+                    <p className="text-gray-600 dark:text-gray-400">Nairobi, Kenya</p>
+                  </div>
+                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
+                    Apr 2023 - Aug 2023
+                  </span>
+                </div>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                  <li className="flex gap-2">
+                    <span className="text-red-700 dark:text-red-600">•</span>
+                    Completed an intensive 10-week full-stack web development boot camp utilizing the MERN stack, gaining a strong foundation in both front-end and back-end development methodologies
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-red-700 dark:text-red-600">•</span>
+                    Contributed significantly to the development of interactive web solutions by fostering seamless cross-functional collaboration within agile development teams
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-red-700 dark:text-red-600">•</span>
+                    Developed a strong proficiency in key front-end technologies including HTML5, CSS, Tailwind CSS, and React.js, enabling the creation of dynamic, responsive, and user-friendly interfaces
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-red-700 dark:text-red-600">•</span>
+                    Gained practical proficiency in troubleshooting, identifying and resolving API integration errors, front-end rendering bugs, and database query issues utilizing debugging tools and systematic problem-solving methodologies
+                  </li>
+                </ul>
+              </div>
             </div>
             </div>
 
@@ -493,10 +492,7 @@ export default function Home() {
               <div className="space-y-6">
 
               {/* Cornell Blockchain Club */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell Blockchain Club</h3>
@@ -525,133 +521,10 @@ export default function Home() {
                     Participate in hackathons and blockchain competitions, building practical solutions that explore the transformative potential of decentralized technologies
                   </li>
                 </ul>
-              </motion.div>
-
-              {/* First Generation Student Union */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">First Generation Student Union</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Member</p>
-                    <p className="text-gray-600 dark:text-gray-400">Cornell University | Ithaca, NY</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    2024 - Present
-                  </span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300">
-                  Active member supporting first-generation college students through peer mentorship, academic resources, and community building initiatives.
-                </p>
-              </motion.div>
-
-              {/* Cornell East Africans Together Club */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell East Africans Together Club</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Treasurer</p>
-                    <p className="text-gray-600 dark:text-gray-400">Cornell University | Ithaca, NY</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    2024 - Present
-                  </span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300">
-                  Manage club finances, budget allocation, and fundraising initiatives while coordinating cultural showcases and mentorship programs celebrating East African heritage.
-                </p>
-              </motion.div>
-
-              {/* NSBE */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">NSBE Cornell</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Member</p>
-                    <p className="text-gray-600 dark:text-gray-400">National Society of Black Engineers | Ithaca, NY</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    2024 - Present
-                  </span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300">
-                  Active member engaging with the nation's largest student-managed organization focused on increasing Black engineers' success in STEM through professional development and community outreach.
-                </p>
-              </motion.div>
-
-              {/* Underrepresented Minorities in Computing */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Underrepresented Minorities in Computing</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Member</p>
-                    <p className="text-gray-600 dark:text-gray-400">Cornell University | Ithaca, NY</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    2024 - Present
-                  </span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300">
-                  Build community and foster belonging for underrepresented students in computing through inclusive programming and advocacy initiatives promoting diversity in tech.
-                </p>
-              </motion.div>
-
-              {/* Cornell Rotaract */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell Rotaract</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Member</p>
-                    <p className="text-gray-600 dark:text-gray-400">Cornell University | Ithaca, NY</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    2024 - Present
-                  </span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300">
-                  Participate in service projects and community initiatives focused on creating positive change locally and globally while developing leadership skills.
-                </p>
-              </motion.div>
-
-              {/* ColorStack */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">ColorStack</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Member</p>
-                    <p className="text-gray-600 dark:text-gray-400">National Community Network | Remote</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Nov 2024 - Present
-                  </span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300">
-                  Active member of the nation's largest community empowering Black and Latinx students in tech, connecting with 10,000+ members through hackathons and career development opportunities.
-                </p>
-              </motion.div>
+              </div>
 
               {/* CodePath */}
-              <motion.div
-                whileHover={{ scale: 1.01 }}
-                className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-              >
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-red-800 dark:text-red-600">CodePath</h3>
@@ -676,7 +549,52 @@ export default function Home() {
                     Collaborated with diverse cohort of students preparing for software engineering interviews at top tech companies
                   </li>
                 </ul>
-              </motion.div>
+              </div>
+
+              {/* Cornell East Africans Together Club */}
+              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell East Africans Together Club</h3>
+                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Treasurer</p>
+                    <p className="text-gray-600 dark:text-gray-400">Cornell University | Ithaca, NY</p>
+                  </div>
+                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
+                    2024 - Present
+                  </span>
+                </div>
+                <p className="text-gray-700 dark:text-gray-300">
+                  Manage club finances, budget allocation, and fundraising initiatives while coordinating cultural showcases and mentorship programs celebrating East African heritage.
+                </p>
+              </div>
+
+              {/* Other Organizations - Simplified */}
+              <div className="space-y-3">
+                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
+                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">First Generation Student Union, Cornell</h3>
+                  <p className="text-gray-900 dark:text-gray-100">Member</p>
+                </div>
+
+                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
+                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">National Society of Black Engineers, Cornell</h3>
+                  <p className="text-gray-900 dark:text-gray-100">Member</p>
+                </div>
+
+                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
+                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">Underrepresented Minorities in Computing, Cornell</h3>
+                  <p className="text-gray-900 dark:text-gray-100">Member</p>
+                </div>
+
+                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
+                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">Cornell Rotaract</h3>
+                  <p className="text-gray-900 dark:text-gray-100">Member</p>
+                </div>
+
+                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
+                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">ColorStack</h3>
+                  <p className="text-gray-900 dark:text-gray-100">Member</p>
+                </div>
+              </div>
             </div>
             </div>
           </motion.div>
@@ -780,7 +698,6 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  whileHover={{ y: -3 }}
                   className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -817,7 +734,6 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  whileHover={{ y: -3 }}
                   className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -853,7 +769,6 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  whileHover={{ y: -3 }}
                   className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -889,7 +804,6 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  whileHover={{ y: -3 }}
                   className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -919,7 +833,6 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  whileHover={{ y: -3 }}
                   className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -995,53 +908,17 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-
-              {/* Tools & Platforms */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-red-800 dark:text-red-600">Tools & Platforms</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["Git", "GitHub", "Docker", "Vercel", "Figma", "Notion", "VS Code", "Jupyter"].map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-600 rounded border border-red-200 dark:border-red-800 text-sm">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Specialties */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-red-800 dark:text-red-600">Specialties</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["Data Science", "Machine Learning", "Full-Stack Dev", "Blockchain", "API Design", "UI/UX"].map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-600 rounded border border-red-200 dark:border-red-800 text-sm">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Soft Skills */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-red-800 dark:text-red-600">Soft Skills</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["Leadership", "Teamwork", "Agile", "Communication", "Problem-Solving"].map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-600 rounded border border-red-200 dark:border-red-800 text-sm">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* Certifications & Languages */}
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">🏆 Certifications</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Certifications</h3>
                 <p className="text-lg text-gray-700 dark:text-gray-300">Google Data Analytics Professional Certificate</p>
               </div>
               
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">🌍 Languages</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Languages</h3>
                 <p className="text-lg text-gray-700 dark:text-gray-300">English • Swahili • Kalenjin</p>
               </div>
             </div>
