@@ -398,30 +398,6 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* Codsoft */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">CodSoft</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Web Development Intern</p>
-                    <p className="text-gray-600 dark:text-gray-400">Remote</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Jan 2025 - Feb 2025
-                  </span>
-                </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Architected and deployed full-featured web applications with advanced functionality including user authentication, payment gateway integration, and real-time features
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Demonstrated proficiency in full-stack development using React.js, Node.js, Express.js, MongoDB, and modern web technologies
-                  </li>
-                </ul>
-              </div>
-
               {/* Power Learn Project */}
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
@@ -568,7 +544,7 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Other Organizations - Simplified */}
+              {/* Other Organizations*/}
               <div className="space-y-3">
                 <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
                   <h3 className="text-lg font-bold text-red-800 dark:text-red-600">First Generation Student Union, Cornell</h3>
@@ -673,8 +649,7 @@ export default function Home() {
                 { id: "fullstack", label: "FULLSTACK" },
                 { id: "ai", label: "AI" },
                 { id: "datascience", label: "DATA SCIENCE" },
-                { id: "blockchain", label: "BLOCKCHAIN" },
-                { id: "uxui", label: "UX/UI" }
+                { id: "blockchain", label: "BLOCKCHAIN" }
               ].map((filter) => (
                 <button
                   key={filter.id}
@@ -795,65 +770,6 @@ export default function Home() {
                   >
                     View Notebook <ExternalLink className="w-4 h-4" />
                   </a>
-                </motion.div>
-              )}
-
-              {/* Cornell CIS Website Redesign */}
-              {(projectFilter === "all" || projectFilter === "uxui") && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Cornell CIS Redesign</h3>
-                    <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
-                  </div>
-                  <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
-                    UX/UI • Accessibility
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Led a comprehensive accessibility-first redesign of the Cornell College of Information Science website, conducting extensive user research with diverse student populations, creating detailed personas and user journey maps, implementing WCAG 2.1 AAA compliance standards throughout the design, utilizing Figma for high-fidelity prototypes and interactive mockups, rigorously testing color contrast ratios and keyboard navigation patterns using Stark accessibility toolkit, implementing Tailwind CSS for responsive design across all device sizes, and delivering a modern, inclusive digital experience that improved site usability scores by 45% while ensuring equal access for users with disabilities.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Figma</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Tailwind</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Stark</span>
-                  </div>
-                  <p className="text-red-800 dark:text-red-600 flex items-center gap-1 font-medium">
-                    View Case Study <ExternalLink className="w-4 h-4" />
-                  </p>
-                </motion.div>
-              )}
-
-              {/* Ithaca Apple Harvest */}
-              {(projectFilter === "all" || projectFilter === "uxui") && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Apple Harvest Festival</h3>
-                    <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
-                  </div>
-                  <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
-                    UX/UI • Mobile-First
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Designed and developed a stunning mobile-first responsive website for Ithaca's beloved Apple Harvest Festival, prioritizing optimal mobile user experience through touch-friendly interfaces and streamlined navigation, implementing progressive web app principles for fast loading and offline capabilities, creating cohesive visual design in Figma that captures the festival's warm community atmosphere, hand-coding semantic HTML5 and modern CSS with Tailwind utility classes for pixel-perfect implementation, optimizing performance to achieve 98+ Google Lighthouse scores across all categories (Performance, Accessibility, Best Practices, SEO), and delivering an engaging digital platform that significantly enhanced festival attendee experience and information access.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Figma</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">HTML/CSS</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Tailwind</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Lighthouse</span>
-                  </div>
-                  <p className="text-red-800 dark:text-red-600 flex items-center gap-1 font-medium">
-                    Visit Prototype <ExternalLink className="w-4 h-4" />
-                  </p>
                 </motion.div>
               )}
             </div>
