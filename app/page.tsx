@@ -808,6 +808,62 @@ export default function Home() {
                   </a>
                 </motion.div>
               )}
+
+              {/* Trust-Based Product Analysis Model */}
+              {(projectFilter === "all" || projectFilter === "datascience" || projectFilter === "ai") && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Trust-Based Product Analysis</h3>
+                    <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
+                  </div>
+                  <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
+                    Data Science • Machine Learning • AI4ALL
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Collaborated with my 2D group at AI4ALL to build an ML-powered trust scoring system analyzing Amazon product data with 40K+ entries. Trained Random Forest and Gradient Boosting classifiers achieving 96.05% accuracy in predicting high-purchase products by quantifying trust signals including ratings, review counts, discount percentages, and seller badges. Engineered comprehensive preprocessing pipelines, performed feature importance analysis with SHAP explainability, and delivered actionable insights through data visualizations identifying Total Reviews, Product Rating, and Discounted Price as key purchase drivers.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Python</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Scikit-learn</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">SHAP</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Random Forest</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Pandas</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <a 
+                      href="https://github.com/Griffins2005/ai4all_02D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
+                    >
+                      View Repository <ExternalLink className="w-4 h-4" />
+                    </a>
+                    <span className="text-gray-400">•</span>
+                    <a 
+                      href="https://claude.ai/public/artifacts/9ced5d8d-c574-4e1f-82bb-7681433e2613"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
+                    >
+                      Live Demo <ExternalLink className="w-4 h-4" />
+                    </a>
+                    <span className="text-gray-400">•</span>
+                    <a 
+                      href="https://docs.google.com/presentation/d/1KTfPGSjfi5jbWAycxnMIoeCZY5p_b5UXP6WmFLd6T6g/edit?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
+                    >
+                      Presentation <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         </div>
