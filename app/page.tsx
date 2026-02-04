@@ -705,20 +705,56 @@ export default function Home() {
                     <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
                   </div>
                   <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
-                    Blockchain • Full-Stack • AI
+                    Full-Stack • AI • Blockchain
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Built a revolutionary decentralized rental marketplace exclusively for Cornell students, featuring an intelligent AI-powered recommendation engine that matches students with their ideal housing based on preferences, budget, and lifestyle, while leveraging blockchain technology with Solidity smart contracts and Web3.js integration to enable secure, transparent, tokenized payment transactions with zero intermediary fees and complete transaction immutability.
+                    Engineered a full-stack rental housing platform matching renters with landlords through intelligent compatibility scoring algorithms that analyze 12+ weighted criteria including budget, location, amenities, and lifestyle preferences. Implemented JWT authentication, Google OAuth, machine learning-enhanced matching with collaborative filtering, and integrated FastAPI backend with React frontend, PostgreSQL database, and Celery background workers for daily match computations serving personalized property recommendations.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">React</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Django</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Supabase</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Solidity</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Web3.js</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">FastAPI</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">PostgreSQL</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Celery</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">ML</span>
                   </div>
                   <a 
                     href="https://github.com/Griffins2005/Nestopia"
+          target="_blank"
+          rel="noopener noreferrer"
+                    className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
+                  >
+                    View Repository <ExternalLink className="w-4 h-4" />
+                  </a>
+                </motion.div>
+              )}
+
+              {/* CF AI API Copilot */}
+              {(projectFilter === "all" || projectFilter === "fullstack" || projectFilter === "ai") && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">CF AI API Copilot</h3>
+                    <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
+                  </div>
+                  <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
+                    AI • Full-Stack • Edge Computing
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Built a Cloudflare-native AI assistant that ingests OpenAPI/Swagger specifications, leveraging Workers AI (Llama 3.3) with Durable Objects for persistent session memory to answer developer questions about APIs. Architected an edge-first solution featuring streaming spec ingestion, context-aware chat with digest summaries, favorite endpoints management, and a vanilla JavaScript Pages UI—delivering sub-100ms response times with zero-config deployment entirely on Cloudflare's global network.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Cloudflare Workers</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Workers AI</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Durable Objects</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Llama 3.3</span>
+                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Edge Computing</span>
+                  </div>
+                  <a 
+                    href="https://github.com/Griffins2005/cf-ai-api-copilot"
           target="_blank"
           rel="noopener noreferrer"
                     className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
