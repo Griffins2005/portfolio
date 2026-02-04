@@ -291,7 +291,7 @@ export default function Home() {
                     <p className="text-gray-600 dark:text-gray-400">Introduction to Web Programming | Ithaca, NY</p>
                   </div>
                   <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Aug 2025 - Present
+                    Aug 2025 - Dec 2025
                   </span>
                 </div>
                 <ul className="space-y-2 text-gray-700 dark:text-gray-300">
@@ -314,7 +314,9 @@ export default function Home() {
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Craiive</h3>
+                    <a href="https://craive.app/" target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-red-800 dark:text-red-600 hover:underline">
+                      Craiive
+                    </a>
                     <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Full-Stack Intern</p>
                     <p className="text-gray-600 dark:text-gray-400">AI Food-Inventory Startup | Remote</p>
                   </div>
@@ -368,34 +370,46 @@ export default function Home() {
 
               {/* Cornell AMRC */}
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell AMRC</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Document Conversion Specialist → Project Coordinator</p>
-                    <p className="text-gray-600 dark:text-gray-400">Student Disability Services | Ithaca, NY</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Sep 2024 - Present
-                  </span>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-red-800 dark:text-red-600 mb-1">Cornell AMRC</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">Student Disability Services | Ithaca, NY</p>
                 </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Promoted from Document Conversion Specialist to Project Coordinator, demonstrating strong leadership in academic accessibility operations
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Orchestrate project workflows, cross-team communications, and quality control for 50+ courses each semester, ensuring 100% on-time delivery
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Reduced average turnaround time from 5 days to 3 days through process optimization and Python automation scripts for content conversion
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Champion accessibility and inclusion, directly impacting students with disabilities' academic success at Cornell
-                  </li>
-                </ul>
+                
+                {/* Position 1: Project Coordinator */}
+                <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
+                  <div className="flex items-start justify-between mb-3">
+                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Project Coordinator</p>
+                    <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
+                      May 2025 - Present
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Orchestrate project workflows, cross-team communications, and quality control for 50+ courses each semester, ensuring 100% on-time delivery
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Reduced average turnaround time from 5 days to 3 days through process optimization and Python automation scripts for content conversion
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Position 2: Document Conversion Specialist */}
+                <div>
+                  <div className="flex items-start justify-between mb-3">
+                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Document Conversion Specialist</p>
+                    <span className="text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded border border-gray-200 dark:border-gray-700">
+                      Sep 2024 - May 2025
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Champion accessibility and inclusion, directly impacting students with disabilities' academic success at Cornell through high-quality document conversion services
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               {/* Power Learn Project */}
@@ -469,34 +483,50 @@ export default function Home() {
 
               {/* Cornell Blockchain Club */}
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell Blockchain Club</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Explorer → Full Member</p>
-                    <p className="text-gray-600 dark:text-gray-400">Cornell University | Ithaca, NY</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    2024 - Present
-                  </span>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-red-800 dark:text-red-600 mb-1">Cornell Blockchain Club</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">Cornell University | Ithaca, NY</p>
                 </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Progressed from Explorer to Full Member, demonstrating exceptional commitment and technical proficiency in blockchain technology
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Actively engage in cutting-edge research and development of decentralized applications, smart contract programming with Solidity, and blockchain protocol analysis
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Collaborate with talented peers on innovative blockchain projects, attend technical workshops with industry leaders, and contribute to Cornell's vibrant Web3 ecosystem
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Participate in hackathons and blockchain competitions, building practical solutions that explore the transformative potential of decentralized technologies
-                  </li>
-                </ul>
+                
+                {/* Position 1: Member - Subteam Engineering */}
+                <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
+                  <div className="flex items-start justify-between mb-3">
+                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Member - Subteam Engineering</p>
+                    <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
+                      Aug 2025 - Present
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Actively engage in cutting-edge research and development of decentralized applications, smart contract programming with Solidity, and blockchain protocol analysis
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Collaborate with talented peers on innovative blockchain projects, attend technical workshops with industry leaders, and contribute to Cornell's vibrant Web3 ecosystem
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Participate in hackathons and blockchain competitions, building practical solutions that explore the transformative potential of decentralized technologies
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Position 2: Explorer */}
+                <div>
+                  <div className="flex items-start justify-between mb-3">
+                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Explorer</p>
+                    <span className="text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded border border-gray-200 dark:border-gray-700">
+                      Feb 2025 - Jul 2025
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Demonstrated exceptional commitment and technical proficiency in blockchain technology, progressing to full member status within the engineering subteam
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               {/* CodePath */}
@@ -596,27 +626,31 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-3 text-lg">
                   <span className="text-red-700 dark:text-red-600">•</span>
-                  Introduction to Computing with Python
+                  Introductory Python Programming
                 </li>
                 <li className="flex items-center gap-3 text-lg">
                   <span className="text-red-700 dark:text-red-600">•</span>
-                  Calculus I
+                  Calculus I & II
                 </li>
                 <li className="flex items-center gap-3 text-lg">
                   <span className="text-red-700 dark:text-red-600">•</span>
-                  Design & Web Programming
+                  Design & Web Programming (HTML, CSS, JavaScript)
                 </li>
                 <li className="flex items-center gap-3 text-lg">
                   <span className="text-red-700 dark:text-red-600">•</span>
-                  Object-Oriented Programming in Java
+                  Object-Oriented Programming and Data Structures using Java
                 </li>
                 <li className="flex items-center gap-3 text-lg">
                   <span className="text-red-700 dark:text-red-600">•</span>
-                  Calculus II
+                  Introduction to Data Science using Python
                 </li>
                 <li className="flex items-center gap-3 text-lg">
                   <span className="text-red-700 dark:text-red-600">•</span>
-                  Introduction to Data Science
+                  Data Structures and Functional Programming using OCaml
+                </li>
+                <li className="flex items-center gap-3 text-lg">
+                  <span className="text-red-700 dark:text-red-600">•</span>
+                  Linear Algebra for Data Science
                 </li>
                 <li className="flex items-center gap-3 text-lg">
                   <span className="text-red-700 dark:text-red-600">•</span>
@@ -885,7 +919,7 @@ export default function Home() {
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <h3 className="text-xl font-bold mb-4 text-red-800 dark:text-red-600">Languages</h3>
                 <div className="flex flex-wrap gap-2">
-                  {["Python", "Java", "JavaScript", "TypeScript", "Dart", "HTML", "CSS", "SQL", "R", "Solidity"].map((skill) => (
+                  {["Python", "Java", "JavaScript", "TypeScript", "Dart", "OCaml", "HTML", "CSS", "SQL", "R", "Solidity"].map((skill) => (
                     <span key={skill} className="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-600 rounded border border-red-200 dark:border-red-800 text-sm">
                       {skill}
                     </span>
@@ -897,7 +931,7 @@ export default function Home() {
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <h3 className="text-xl font-bold mb-4 text-red-800 dark:text-red-600">Frameworks & Libraries</h3>
                 <div className="flex flex-wrap gap-2">
-                  {["Django", "Flask", "React.js", "Next.js", "Node.js", "Flutter", "Tailwind CSS", "Pandas", "NumPy", "scikit-learn", "HuggingFace"].map((skill) => (
+                  {["Django", "FastAPI", "Flask", "React.js", "Next.js", "Node.js", "Flutter", "Cloudflare Workers", "Tailwind CSS", "Pandas", "NumPy", "scikit-learn", "SHAP", "HuggingFace", "Celery"].map((skill) => (
                     <span key={skill} className="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-600 rounded border border-red-200 dark:border-red-800 text-sm">
                       {skill}
                     </span>
@@ -909,7 +943,7 @@ export default function Home() {
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
                 <h3 className="text-xl font-bold mb-4 text-red-800 dark:text-red-600">Databases</h3>
                 <div className="flex flex-wrap gap-2">
-                  {["PostgreSQL", "MongoDB", "SQLite", "Supabase", "Firebase"].map((skill) => (
+                  {["PostgreSQL", "MongoDB", "SQLite", "Redis", "Supabase", "Firebase"].map((skill) => (
                     <span key={skill} className="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-600 rounded border border-red-200 dark:border-red-800 text-sm">
                       {skill}
                     </span>
