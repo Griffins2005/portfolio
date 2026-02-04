@@ -254,32 +254,64 @@ export default function Home() {
                 Professional Experience
               </h3>
               <div className="space-y-6">
-              {/* AI Ignite Fellow */}
+              {/* AI4ALL */}
               <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">AI4ALL</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">AI Ignite Fellow</p>
-                    <p className="text-gray-600 dark:text-gray-400">Remote</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Sep 2025 - Present
-                  </span>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-red-800 dark:text-red-600 mb-1">AI4ALL</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">Remote</p>
                 </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Selected for prestigious AI Ignite Fellowship focused on ethical AI development and community-driven machine learning initiatives
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Collaborate with industry mentors and fellows to design AI solutions that prioritize fairness, interpretability, and measurable social impact
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Conduct applied research exploring responsible AI practices and data ethics in real-world applications
-                  </li>
-                </ul>
+                
+                {/* Position 1: Accelerator */}
+                <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
+                  <div className="flex items-start justify-between mb-3">
+                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Accelerator</p>
+                    <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
+                      Jan 2026 - Present
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Advancing through comprehensive 7-week AI industry career readiness training focused on internship preparation with AI-specific technical interview mastery
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Optimizing application materials including industry-ready resume, LinkedIn, and GitHub portfolio with targeted feedback from AI industry mentors
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Participating in mock technical interviews to strengthen communication, problem-solving skills, and technical competency for competitive AI internship applications
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Position 2: AI Ignite Fellow */}
+                <div>
+                  <div className="flex items-start justify-between mb-3">
+                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">AI Ignite Fellow</p>
+                    <span className="text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded border border-gray-200 dark:border-gray-700">
+                      Sep 2025 - Dec 2025
+                    </span>
+                  </div>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Collaborated with Group 2D to develop Trust-Based Product Analysis Model, a machine learning project analyzing Amazon product data to predict purchase volume achieving 96.05% accuracy
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Completed intensive 13-week AI Technical Portfolio Project building human-centered solutions grounded in real-world needs and public good through nationwide student collaboration
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Engaged in weekly technical workshops led by AI4ALL instructors covering advanced AI and machine learning concepts, industry panels with professionals, and peer mentorship
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-red-700 dark:text-red-600">•</span>
+                      Mastered responsible AI principles including fairness and bias mitigation, data privacy, AI safety and security, and transparency in model development
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               {/* Teaching Assistant */}
