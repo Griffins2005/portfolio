@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 
 const inter = Inter({ 
   subsets: ["latin"],
   display: 'swap',
   variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -32,8 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-white`}>
-        {children}
+      <body className={`${inter.className} bg-neutral-50 text-gray-900 antialiased`}>
+        <Navigation />
+        <main className="min-h-screen pt-20">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

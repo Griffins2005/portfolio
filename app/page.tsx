@@ -1,1018 +1,209 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  MapPin, 
-  Code, 
-  Database, 
-  Palette,
-  ExternalLink,
-  Briefcase,
-  Award,
-  Users,
-  Heart,
-  Globe,
-  Twitter
-} from "lucide-react";
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Github, Linkedin, Mail, Twitter, ArrowRight } from "lucide-react";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("home");
-  const [projectFilter, setProjectFilter] = useState("all");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "experience", "coursework", "projects", "skills"];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/90 dark:bg-gray-950/90 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-xl font-bold text-gray-800 dark:text-gray-200"
-            >
-              GL
-            </motion.div>
-            <div className="hidden md:flex space-x-8">
-              {["home", "experience", "coursework", "projects", "skills"].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className={`capitalize hover:text-red-700 dark:hover:text-red-400 ${
-                    activeSection === item ? "text-red-800 dark:text-red-500 font-semibold" : "text-gray-600 dark:text-gray-400"
-                  }`}
-                  aria-label={`Navigate to ${item} section`}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero & About Section Combined */}
-      <section id="home" className="min-h-screen py-32 bg-white dark:bg-gray-950 pt-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-[350px_1fr] gap-20 items-start">
-            {/* Headshot - Left Side */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex justify-center md:justify-start"
-            >
-              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[320px] lg:h-[320px]">
-                <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-red-700 dark:border-red-600 shadow-2xl">
-        <Image
-                    src="/headshot.jpeg"
-                    alt="Griffins Kiptanui Lelgut Too"
-                    fill
-                    className="object-cover"
-          priority
-        />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Main Content - Right Side */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center md:text-left"
-            >
-              <div className="flex items-center justify-center md:justify-start gap-2 mb-8">
+      {/* Hero Section - Minimalist with lots of whitespace */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-24 md:py-32">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* Left: Text Content */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <span className="text-2xl">🇰🇪</span>
-                <span className="text-sm font-medium text-gray-600 dark:text-gray-400">From Kenya to Cornell</span>
+                <span>From Kenya to Cornell</span>
               </div>
               
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 dark:text-gray-100">
-                Griffins Kiptanui Lelgut Too
+              <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 leading-tight">
+                Griffins Kiptanui<br />Lelgut Too
               </h1>
               
-              <p className="text-xl sm:text-2xl text-red-800 dark:text-red-600 mb-6 font-medium">
+              <p className="text-xl text-gray-600 leading-relaxed">
                 Data Science • Full-Stack • AI • Blockchain
               </p>
               
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-3">
+              <p className="text-base text-gray-500">
                 Information Science at Cornell '28
               </p>
+            </div>
 
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-12">
-                Building accessible tech — from full-stack apps to ML models
+            {/* Social Links */}
+            <div className="flex items-center space-x-3">
+              <a
+                href="https://github.com/Griffins2005"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 border border-gray-200 rounded-lg hover:border-gray-900 hover:bg-gray-50 transition-all"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/griffins-kiptanui-374a1a277"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 border border-gray-200 rounded-lg hover:border-gray-900 hover:bg-gray-50 transition-all"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://x.com/K_Griffins8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 border border-gray-200 rounded-lg hover:border-gray-900 hover:bg-gray-50 transition-all"
+                aria-label="X"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:gkl39@cornell.edu"
+                className="p-3 border border-gray-200 rounded-lg hover:border-gray-900 hover:bg-gray-50 transition-all"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
+
+            {/* CTA */}
+            <div className="pt-4">
+              <Link
+                href="/projects"
+                className="inline-flex items-center space-x-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+              >
+                <span>View Projects</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Right: Headshot */}
+          <div className="flex justify-center md:justify-end">
+            <div className="relative w-80 h-80 md:w-96 md:h-96">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-100 to-orange-100 rounded-2xl transform rotate-3"></div>
+              <div className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
+                <Image
+                  src="/headshot.jpeg"
+                  alt="Griffins Kiptanui Lelgut Too"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section - Clean and Minimal */}
+      <section className="max-w-4xl mx-auto px-6 lg:px-8 py-24">
+        <div className="space-y-12">
+          <div>
+            <h2 className="text-3xl font-semibold text-gray-900 mb-6">About</h2>
+            <div className="prose prose-lg text-gray-600 leading-relaxed space-y-4">
+              <p>
+                I'm a sophomore at Cornell University studying Information Science, 
+                with a passion for building accessible, data-driven solutions that 
+                make a real impact.
               </p>
-              
-              <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-20">
-                <motion.a
-                  href="https://github.com/Griffins2005"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-300 border border-gray-900 dark:border-gray-200"
-                  aria-label="Visit GitHub profile"
-                >
-                  <Github className="w-5 h-5" />
-                  GitHub
-                </motion.a>
-                
-                <motion.a
-                  href="https://www.linkedin.com/in/griffins-kiptanui-374a1a277"
-            target="_blank"
-            rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-6 py-3 bg-red-700 dark:bg-red-600 text-white rounded-lg hover:bg-red-800 dark:hover:bg-red-700"
-                  aria-label="Visit LinkedIn profile"
-                >
-                  <Linkedin className="w-5 h-5" />
-                  LinkedIn
-                </motion.a>
-
-                <motion.a
-                  href="https://x.com/K_Griffins8"
-            target="_blank"
-            rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-300 border border-gray-900 dark:border-gray-200"
-                  aria-label="Visit X profile"
-                >
-                  <Twitter className="w-5 h-5" />
-                  X
-                </motion.a>
-                
-                <motion.a
-                  href="mailto:gkl39@cornell.edu"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-900"
-                  aria-label="Send email"
-                >
-                  <Mail className="w-5 h-5" />
-                  Email
-                </motion.a>
-              </div>
-            </motion.div>
+              <p>
+                My work spans full-stack development, machine learning, and blockchain 
+                technology. I believe in creating technology that serves people and 
+                communities, grounded in ethical AI principles and human-centered design.
+              </p>
+            </div>
           </div>
 
-          {/* Skills and Values */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mt-20"
-          >
-            
-            {/* Skills Cards */}
-            <div className="grid grid-cols-2 gap-8 mb-20">
-              <div className="p-8 bg-red-50 dark:bg-gray-900 border border-red-200 dark:border-gray-800 rounded-lg">
-                <Code className="w-10 h-10 text-red-700 dark:text-red-600 mb-4" />
-                <h3 className="font-semibold text-lg mb-3 text-gray-900 dark:text-gray-100">Full-Stack Dev</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">React, Django, Next.js</p>
-              </div>
-              
-              <div className="p-8 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg">
-                <Database className="w-10 h-10 text-red-700 dark:text-red-600 mb-4" />
-                <h3 className="font-semibold text-lg mb-3 text-gray-900 dark:text-gray-100">Data Science</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Python, ML, Analytics</p>
-              </div>
-              
-              <div className="p-8 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg">
-                <Palette className="w-10 h-10 text-red-700 dark:text-red-600 mb-4" />
-                <h3 className="font-semibold text-lg mb-3 text-gray-900 dark:text-gray-100">UX/Design</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Figma, Accessibility</p>
-              </div>
-              
-              <div className="p-8 bg-red-50 dark:bg-gray-900 border border-red-200 dark:border-gray-800 rounded-lg">
-                <Globe className="w-10 h-10 text-red-700 dark:text-red-600 mb-4" />
-                <h3 className="font-semibold text-lg mb-3 text-gray-900 dark:text-gray-100">Blockchain</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Solidity, Web3.js</p>
-              </div>
+          {/* Focus Areas */}
+          <div className="grid md:grid-cols-2 gap-8 pt-8">
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-gray-900">Full-Stack Development</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Building responsive web applications with React, Next.js, Django, 
+                and FastAPI. Focus on clean code and excellent user experience.
+              </p>
             </div>
-            
-            {/* Values */}
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-              <span className="px-4 py-2 border border-gray-200 dark:border-gray-800 rounded">Accessibility</span>
-              <span className="px-4 py-2 border border-gray-200 dark:border-gray-800 rounded">Community</span>
-              <span className="px-4 py-2 border border-gray-200 dark:border-gray-800 rounded">Clean Code</span>
-              <span className="px-4 py-2 border border-gray-200 dark:border-gray-800 rounded">Impact</span>
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-gray-900">Data Science & ML</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Developing predictive models and analyzing data to drive insights. 
+                Experienced with Python, scikit-learn, and responsible AI practices.
+              </p>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl font-bold mb-4 text-center text-gray-900 dark:text-gray-100">Experience</h2>
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
-              Combining technical excellence with meaningful community impact
-            </p>
-            
-            {/* Professional Experience */}
-            <div className="mb-16">
-              <h3 className="text-2xl font-bold mb-6 text-red-800 dark:text-red-600 border-b border-gray-200 dark:border-gray-800 pb-2">
-                Professional Experience
-              </h3>
-              <div className="space-y-6">
-              {/* AI4ALL */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-red-800 dark:text-red-600 mb-1">AI4ALL</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Remote</p>
-                </div>
-                
-                {/* Position 1: Accelerator */}
-                <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
-                  <div className="flex items-start justify-between mb-3">
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Accelerator</p>
-                    <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                      Jan 2026 - Present
-                    </span>
-                  </div>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Advancing through comprehensive 7-week AI industry career readiness training focused on internship preparation with AI-specific technical interview mastery
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Optimizing application materials including industry-ready resume, LinkedIn, and GitHub portfolio with targeted feedback from AI industry mentors
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Participating in mock technical interviews to strengthen communication, problem-solving skills, and technical competency for competitive AI internship applications
-                    </li>
-                  </ul>
-                </div>
-                
-                {/* Position 2: AI Ignite Fellow */}
-                <div>
-                  <div className="flex items-start justify-between mb-3">
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">AI Ignite Fellow</p>
-                    <span className="text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded border border-gray-200 dark:border-gray-700">
-                      Sep 2025 - Dec 2025
-                    </span>
-                  </div>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Collaborated with Group 2D to develop Trust-Based Product Analysis Model, a machine learning project analyzing Amazon product data to predict purchase volume achieving 96.05% accuracy
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Completed intensive 13-week AI Technical Portfolio Project building human-centered solutions grounded in real-world needs and public good through nationwide student collaboration
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Engaged in weekly technical workshops led by AI4ALL instructors covering advanced AI and machine learning concepts, industry panels with professionals, and peer mentorship
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Mastered responsible AI principles including fairness and bias mitigation, data privacy, AI safety and security, and transparency in model development
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Teaching Assistant */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell CIS</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Teaching Assistant — INFO 1300</p>
-                    <p className="text-gray-600 dark:text-gray-400">Introduction to Web Programming | Ithaca, NY</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Aug 2025 - Dec 2025
-                  </span>
-                </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Empower 110+ undergraduate students to master web development fundamentals including HTML5, CSS3, and JavaScript
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Lead weekly lab sessions, grade assignments with detailed feedback, and conduct one-on-one debugging sessions
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Mentor students in problem-solving approaches and clean coding practices, significantly improving their technical proficiency
-                  </li>
-                </ul>
-              </div>
-
-              {/* Craiive Intern */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <a href="https://craive.app/" target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-red-800 dark:text-red-600 hover:underline">
-                      Craiive
-                    </a>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Full-Stack Intern</p>
-                    <p className="text-gray-600 dark:text-gray-400">AI Food-Inventory Startup | Remote</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Sep 2025 - Present
-                  </span>
-                </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Developed full-stack AI-powered food inventory application using Flutter, Dart, Firebase, and Python in fast-paced startup environment
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Successfully integrated machine learning models into backend APIs and optimized schema design for scalability
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Designed intuitive UX and implemented responsive frontend components, contributing to product-market fit validation
-                  </li>
-                </ul>
-              </div>
-
-              {/* Capital One */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Capital One</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Analyst Early Internship Program (AEIP) Summit</p>
-                    <p className="text-gray-600 dark:text-gray-400">Virtual | McLean, VA</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    August 2025
-                  </span>
-                </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Competitively selected for Capital One's exclusive AEIP Summit — immersive two-day experience exploring the intersection of data, business strategy, and technology
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Engaged in intensive business case workshops, developed data-driven product recommendations, and networked with senior analysts and leadership
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Gained valuable insights into analytics-driven decision-making, customer-first product development, and Capital One's innovative culture
-                  </li>
-                </ul>
-              </div>
-
-              {/* Cornell AMRC */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-red-800 dark:text-red-600 mb-1">Cornell AMRC</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Student Disability Services | Ithaca, NY</p>
-                </div>
-                
-                {/* Position 1: Project Coordinator */}
-                <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
-                  <div className="flex items-start justify-between mb-3">
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Project Coordinator</p>
-                    <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                      May 2025 - Present
-                    </span>
-                  </div>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Orchestrate project workflows, cross-team communications, and quality control for 50+ courses each semester, ensuring 100% on-time delivery
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Reduced average turnaround time from 5 days to 3 days through process optimization and Python automation scripts for content conversion
-                    </li>
-                  </ul>
-                </div>
-                
-                {/* Position 2: Document Conversion Specialist */}
-                <div>
-                  <div className="flex items-start justify-between mb-3">
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Document Conversion Specialist</p>
-                    <span className="text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded border border-gray-200 dark:border-gray-700">
-                      Sep 2024 - May 2025
-                    </span>
-                  </div>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Champion accessibility and inclusion, directly impacting students with disabilities' academic success at Cornell through high-quality document conversion services
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Power Learn Project */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Power Learn Project</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Full Stack Web Development</p>
-                    <p className="text-gray-600 dark:text-gray-400">Nairobi, Kenya</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Feb 2024 - Jun 2024
-                  </span>
-                </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Competed in 2 major hackathons, successfully building and presenting scalable, innovative web applications under tight time constraints
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Transformed technical solutions into profitable business ventures generating $4,000 in annual revenue, demonstrating entrepreneurial acumen
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Mastered efficient Django backends and Dart frontends optimized for real-world deployment and user engagement
-                  </li>
-                </ul>
-              </div>
-
-              {/* DirectEd Development Foundation */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">DirectEd Development Foundation</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Full Stack Web Development</p>
-                    <p className="text-gray-600 dark:text-gray-400">Nairobi, Kenya</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Apr 2023 - Aug 2023
-                  </span>
-                </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Completed an intensive 10-week full-stack web development boot camp utilizing the MERN stack, gaining a strong foundation in both front-end and back-end development methodologies
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Contributed significantly to the development of interactive web solutions by fostering seamless cross-functional collaboration within agile development teams
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Developed a strong proficiency in key front-end technologies including HTML5, CSS, Tailwind CSS, and React.js, enabling the creation of dynamic, responsive, and user-friendly interfaces
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Gained practical proficiency in troubleshooting, identifying and resolving API integration errors, front-end rendering bugs, and database query issues utilizing debugging tools and systematic problem-solving methodologies
-                  </li>
-                </ul>
-              </div>
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-gray-900">Blockchain</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Exploring decentralized applications and smart contract development 
+                with Solidity and Web3 technologies.
+              </p>
             </div>
-            </div>
-
-            {/* Community Engagement & Leadership */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold mb-6 text-red-800 dark:text-red-600 border-b border-gray-200 dark:border-gray-800 pb-2">
-                Community Engagement & Leadership
-              </h3>
-              <div className="space-y-6">
-
-              {/* Cornell Blockchain Club */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-red-800 dark:text-red-600 mb-1">Cornell Blockchain Club</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Cornell University | Ithaca, NY</p>
-                </div>
-                
-                {/* Position 1: Member - Subteam Engineering */}
-                <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
-                  <div className="flex items-start justify-between mb-3">
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Member - Subteam Engineering</p>
-                    <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                      Aug 2025 - Present
-                    </span>
-                  </div>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Actively engage in cutting-edge research and development of decentralized applications, smart contract programming with Solidity, and blockchain protocol analysis
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Collaborate with talented peers on innovative blockchain projects, attend technical workshops with industry leaders, and contribute to Cornell's vibrant Web3 ecosystem
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Participate in hackathons and blockchain competitions, building practical solutions that explore the transformative potential of decentralized technologies
-                    </li>
-                  </ul>
-                </div>
-                
-                {/* Position 2: Explorer */}
-                <div>
-                  <div className="flex items-start justify-between mb-3">
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Explorer</p>
-                    <span className="text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded border border-gray-200 dark:border-gray-700">
-                      Feb 2025 - Jul 2025
-                    </span>
-                  </div>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                    <li className="flex gap-2">
-                      <span className="text-red-700 dark:text-red-600">•</span>
-                      Demonstrated exceptional commitment and technical proficiency in blockchain technology, progressing to full member status within the engineering subteam
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* CodePath */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">CodePath</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Student Fellow</p>
-                    <p className="text-gray-600 dark:text-gray-400">Technical Interview Prep Program | Remote</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    Feb 2025 - May 2025
-                  </span>
-                </div>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Completed intensive Technical Interview Prep (TIP 101) program mastering data structures, algorithms, and problem-solving strategies
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Strengthened Python proficiency through weekly LeetCode-style challenges, peer programming sessions, and mock technical interviews
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-700 dark:text-red-600">•</span>
-                    Collaborated with diverse cohort of students preparing for software engineering interviews at top tech companies
-                  </li>
-                </ul>
-              </div>
-
-              {/* Cornell East Africans Together Club */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-red-800 dark:text-red-600">Cornell East Africans Together Club</h3>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">Treasurer</p>
-                    <p className="text-gray-600 dark:text-gray-400">Cornell University | Ithaca, NY</p>
-                  </div>
-                  <span className="text-sm bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-600 px-3 py-1 rounded border border-red-200 dark:border-red-800">
-                    2024 - Present
-                  </span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300">
-                  Manage club finances, budget allocation, and fundraising initiatives while coordinating cultural showcases and mentorship programs celebrating East African heritage.
-                </p>
-              </div>
-
-              {/* Other Organizations*/}
-              <div className="space-y-3">
-                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
-                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">First Generation Student Union, Cornell</h3>
-                  <p className="text-gray-900 dark:text-gray-100">Member</p>
-                </div>
-
-                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
-                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">National Society of Black Engineers, Cornell</h3>
-                  <p className="text-gray-900 dark:text-gray-100">Member</p>
-                </div>
-
-                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
-                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">Underrepresented Minorities in Computing, Cornell</h3>
-                  <p className="text-gray-900 dark:text-gray-100">Member</p>
-                </div>
-
-                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
-                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">Cornell Rotaract</h3>
-                  <p className="text-gray-900 dark:text-gray-100">Member</p>
-                </div>
-
-                <div className="bg-white dark:bg-gray-950 rounded-lg p-4 border border-gray-200 dark:border-gray-800">
-                  <h3 className="text-lg font-bold text-red-800 dark:text-red-600">ColorStack</h3>
-                  <p className="text-gray-900 dark:text-gray-100">Member</p>
-                </div>
-              </div>
-            </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Relevant Coursework Section */}
-      <section id="coursework" className="py-20 bg-white dark:bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-gray-100">Relevant Coursework</h2>
-
-            <div className="max-w-3xl mx-auto">
-              <ul className="space-y-3 text-gray-800 dark:text-gray-200">
-                <li className="flex items-center gap-3 text-lg">
-                  <span className="text-red-700 dark:text-red-600">•</span>
-                  Introductory Statistics
-                </li>
-                <li className="flex items-center gap-3 text-lg">
-                  <span className="text-red-700 dark:text-red-600">•</span>
-                  Introductory Python Programming
-                </li>
-                <li className="flex items-center gap-3 text-lg">
-                  <span className="text-red-700 dark:text-red-600">•</span>
-                  Calculus I & II
-                </li>
-                <li className="flex items-center gap-3 text-lg">
-                  <span className="text-red-700 dark:text-red-600">•</span>
-                  Design & Web Programming (HTML, CSS, JavaScript)
-                </li>
-                <li className="flex items-center gap-3 text-lg">
-                  <span className="text-red-700 dark:text-red-600">•</span>
-                  Object-Oriented Programming and Data Structures using Java
-                </li>
-                <li className="flex items-center gap-3 text-lg">
-                  <span className="text-red-700 dark:text-red-600">•</span>
-                  Introduction to Data Science using Python
-                </li>
-                <li className="flex items-center gap-3 text-lg">
-                  <span className="text-red-700 dark:text-red-600">•</span>
-                  Data Structures and Functional Programming using OCaml
-                </li>
-                <li className="flex items-center gap-3 text-lg">
-                  <span className="text-red-700 dark:text-red-600">•</span>
-                  Linear Algebra for Data Science
-                </li>
-                <li className="flex items-center gap-3 text-lg">
-                  <span className="text-red-700 dark:text-red-600">•</span>
-                  Choices and Consequences in Computing
-                </li>
-              </ul>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl font-bold mb-4 text-center text-gray-900 dark:text-gray-100">Portfolio</h2>
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
-              Dive into my portfolio to discover the diverse projects I've had the pleasure of working on. From concept to completion, each project demonstrates my commitment to excellence and my ability to bring ideas to life.
-            </p>
-            
-            {/* Filter Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {[
-                { id: "all", label: "ALL" },
-                { id: "fullstack", label: "FULLSTACK" },
-                { id: "ai", label: "AI" },
-                { id: "datascience", label: "DATA SCIENCE" },
-                { id: "blockchain", label: "BLOCKCHAIN" }
-              ].map((filter) => (
-                <button
-                  key={filter.id}
-                  onClick={() => setProjectFilter(filter.id)}
-                  className={`px-6 py-2 font-semibold transition-colors ${
-                    projectFilter === filter.id
-                      ? "text-red-700 dark:text-red-600 border-b-2 border-red-700 dark:border-red-600"
-                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-                  }`}
-                >
-                  {filter.label}
-                </button>
-              ))}
-            </div>
-            
-            {/* Projects Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Nestopia */}
-              {(projectFilter === "all" || projectFilter === "fullstack" || projectFilter === "blockchain") && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Nestopia</h3>
-                    <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
-                  </div>
-                  <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
-                    Full-Stack • AI • Blockchain
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Engineered a full-stack rental housing platform matching renters with landlords through intelligent compatibility scoring algorithms that analyze 12+ weighted criteria including budget, location, amenities, and lifestyle preferences. Implemented JWT authentication, Google OAuth, machine learning-enhanced matching with collaborative filtering, and integrated FastAPI backend with React frontend, PostgreSQL database, and Celery background workers for daily match computations serving personalized property recommendations.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">React</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">FastAPI</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">PostgreSQL</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Celery</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">ML</span>
-                  </div>
-                  <a 
-                    href="https://github.com/Griffins2005/Nestopia"
-          target="_blank"
-          rel="noopener noreferrer"
-                    className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
-                  >
-                    View Repository <ExternalLink className="w-4 h-4" />
-                  </a>
-                </motion.div>
-              )}
-
-              {/* CF AI API Copilot */}
-              {(projectFilter === "all" || projectFilter === "fullstack" || projectFilter === "ai") && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">CF AI API Copilot</h3>
-                    <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
-                  </div>
-                  <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
-                    AI • Full-Stack • Edge Computing
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Built a Cloudflare-native AI assistant that ingests OpenAPI/Swagger specifications, leveraging Workers AI (Llama 3.3) with Durable Objects for persistent session memory to answer developer questions about APIs. Architected an edge-first solution featuring streaming spec ingestion, context-aware chat with digest summaries, favorite endpoints management, and a vanilla JavaScript Pages UI—delivering sub-100ms response times with zero-config deployment entirely on Cloudflare's global network.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Cloudflare Workers</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Workers AI</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Durable Objects</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Llama 3.3</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Edge Computing</span>
-                  </div>
-                  <a 
-                    href="https://github.com/Griffins2005/cf-ai-api-copilot"
-          target="_blank"
-          rel="noopener noreferrer"
-                    className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
-                  >
-                    View Repository <ExternalLink className="w-4 h-4" />
-                  </a>
-                </motion.div>
-              )}
-
-              {/* AI News Summarizer */}
-              {(projectFilter === "all" || projectFilter === "ai") && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">AI News Summarizer</h3>
-                    <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
-                  </div>
-                  <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
-                    AI • NLP • Machine Learning
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Created an advanced natural language processing application leveraging state-of-the-art transformer models (T5 and BART) from HuggingFace to automatically generate concise, accurate summaries of lengthy news articles while simultaneously detecting potential misinformation through sophisticated fake news classification algorithms, implementing Django REST framework for robust API endpoints, utilizing transfer learning and fine-tuning techniques to achieve 92% accuracy in fake news detection, and deploying the solution with SQLite database for efficient article storage and retrieval.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Django</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">HuggingFace</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">T5/BART</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">SQLite</span>
-                  </div>
-                  <a 
-                    href="https://github.com/Griffins2005/News-Summarizer"
-          target="_blank"
-          rel="noopener noreferrer"
-                    className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
-                  >
-                    View Repository <ExternalLink className="w-4 h-4" />
-                  </a>
-                </motion.div>
-              )}
-
-              {/* Bank Marketing Campaign */}
-              {(projectFilter === "all" || projectFilter === "datascience") && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Bank Marketing Analytics</h3>
-                    <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
-                  </div>
-                  <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
-                    Data Science • Predictive Analytics
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Conducted comprehensive data science analysis on a massive dataset of over 40,000 banking customers to build sophisticated predictive models for targeted marketing campaign optimization, performing extensive exploratory data analysis (EDA) with advanced feature engineering, implementing multiple machine learning algorithms including Random Forest, Gradient Boosting, and Logistic Regression with rigorous hyperparameter tuning, achieving 89% prediction accuracy for customer subscription likelihood, and delivering actionable insights through compelling data visualizations with Matplotlib and Seaborn that directly informed strategic marketing decisions and increased campaign ROI by identifying high-value customer segments.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Python</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Pandas</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Scikit-learn</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Matplotlib</span>
-                  </div>
-                  <a 
-                    href="https://github.com/Griffins2005/-Bank-Marketing-Campaign"
-          target="_blank"
-          rel="noopener noreferrer"
-                    className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
-                  >
-                    View Notebook <ExternalLink className="w-4 h-4" />
-                  </a>
-                </motion.div>
-              )}
-
-              {/* Trust-Based Product Analysis Model */}
-              {(projectFilter === "all" || projectFilter === "datascience" || projectFilter === "ai") && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Trust-Based Product Analysis</h3>
-                    <ExternalLink className="w-5 h-5 text-red-700 dark:text-red-600" />
-                  </div>
-                  <p className="text-sm text-red-800 dark:text-red-600 font-semibold mb-3">
-                    Data Science • Machine Learning • AI4ALL
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Collaborated with my 2D group at AI4ALL to build an ML-powered trust scoring system analyzing Amazon product data with 40K+ entries. Trained Random Forest and Gradient Boosting classifiers achieving 96.05% accuracy in predicting high-purchase products by quantifying trust signals including ratings, review counts, discount percentages, and seller badges. Engineered comprehensive preprocessing pipelines, performed feature importance analysis with SHAP explainability, and delivered actionable insights through data visualizations identifying Total Reviews, Product Rating, and Discounted Price as key purchase drivers.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Python</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Scikit-learn</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">SHAP</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Random Forest</span>
-                    <span className="text-xs bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-800">Pandas</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <a 
-                      href="https://github.com/Griffins2005/ai4all_02D"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
-                    >
-                      View Repository <ExternalLink className="w-4 h-4" />
-                    </a>
-                    <span className="text-gray-400">•</span>
-                    <a 
-                      href="https://claude.ai/public/artifacts/9ced5d8d-c574-4e1f-82bb-7681433e2613"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
-                    >
-                      Live Demo <ExternalLink className="w-4 h-4" />
-                    </a>
-                    <span className="text-gray-400">•</span>
-                    <a 
-                      href="https://docs.google.com/presentation/d/1KTfPGSjfi5jbWAycxnMIoeCZY5p_b5UXP6WmFLd6T6g/edit?usp=sharing"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-red-800 dark:text-red-600 hover:underline flex items-center gap-1 font-medium"
-                    >
-                      Presentation <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </div>
-                </motion.div>
-              )}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-gray-100">Technical Skills</h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Languages */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-red-800 dark:text-red-600">Languages</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["Python", "Java", "JavaScript", "TypeScript", "Dart", "OCaml", "HTML", "CSS", "SQL", "R", "Solidity"].map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-600 rounded border border-red-200 dark:border-red-800 text-sm">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Frameworks & Libraries */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-red-800 dark:text-red-600">Frameworks & Libraries</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["Django", "FastAPI", "Flask", "React.js", "Next.js", "Node.js", "Flutter", "Cloudflare Workers", "Tailwind CSS", "Pandas", "NumPy", "scikit-learn", "SHAP", "HuggingFace", "Celery"].map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-600 rounded border border-red-200 dark:border-red-800 text-sm">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Databases */}
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-red-800 dark:text-red-600">Databases</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["PostgreSQL", "MongoDB", "SQLite", "Redis", "Supabase", "Firebase"].map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-red-50 dark:bg-red-900/20 text-red-900 dark:text-red-600 rounded border border-red-200 dark:border-red-800 text-sm">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Certifications & Languages */}
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Certifications</h3>
-                <p className="text-lg text-gray-700 dark:text-gray-300">Google Data Analytics Professional Certificate</p>
-              </div>
-              
-              <div className="bg-white dark:bg-gray-950 rounded-lg p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Languages</h3>
-                <p className="text-lg text-gray-700 dark:text-gray-300">English • Swahili • Kalenjin</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-gray-950 text-gray-400 py-8 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-            <p>© {new Date().getFullYear()} All rights reserved.</p>
-            <span>•</span>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span>Ithaca, NY</span>
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-gray-900">UX/Design</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Creating accessible, inclusive digital experiences with Figma. 
+                Committed to WCAG standards and user-centered design.
+              </p>
             </div>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* Quick Links Section */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-24 border-t border-gray-100">
+        <div className="grid md:grid-cols-3 gap-8">
+          <Link
+            href="/experience"
+            className="group p-8 border border-gray-200 rounded-xl hover:border-gray-900 hover:shadow-lg transition-all"
+          >
+            <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:translate-x-1 transition-transform">
+              Experience
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Professional roles at AI4ALL, Craiive, Cornell, and more.
+            </p>
+            <span className="inline-flex items-center space-x-2 text-sm font-medium text-gray-900">
+              <span>View experience</span>
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+
+          <Link
+            href="/projects"
+            className="group p-8 border border-gray-200 rounded-xl hover:border-gray-900 hover:shadow-lg transition-all"
+          >
+            <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:translate-x-1 transition-transform">
+              Projects
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Full-stack apps, ML models, and blockchain solutions.
+            </p>
+            <span className="inline-flex items-center space-x-2 text-sm font-medium text-gray-900">
+              <span>View projects</span>
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+
+          <Link
+            href="/extracurriculars"
+            className="group p-8 border border-gray-200 rounded-xl hover:border-gray-900 hover:shadow-lg transition-all"
+          >
+            <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:translate-x-1 transition-transform">
+              Extracurriculars
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Conferences, excursions, and activities I'm involved in.
+            </p>
+            <span className="inline-flex items-center space-x-2 text-sm font-medium text-gray-900">
+              <span>View activities</span>
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
