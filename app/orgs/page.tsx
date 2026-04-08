@@ -1,3 +1,25 @@
+import type { Metadata } from "next";
+import { siteName } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Organizations",
+  description: `Student organizations and leadership — ${siteName}: Cornell Blockchain Club, URMC, Kenyans at Cornell, and community roles.`,
+  alternates: {
+    canonical: "/orgs",
+  },
+  openGraph: {
+    title: `Organizations | ${siteName}`,
+    description:
+      "Featured orgs: blockchain, computing, cultural identity, and campus leadership.",
+    url: "/orgs",
+  },
+  twitter: {
+    title: `Organizations | ${siteName}`,
+    description:
+      "Cornell clubs and leadership in tech and community.",
+  },
+};
+
 export default function OrgsPage() {
   return (
     <div className="min-h-screen bg-neutral-50">

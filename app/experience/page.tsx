@@ -1,3 +1,25 @@
+import type { Metadata } from "next";
+import { siteName } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Experience",
+  description: `Internships, research, and coursework — ${siteName}: AI4ALL, Capital One, teaching, and technical skills at Cornell.`,
+  alternates: {
+    canonical: "/experience",
+  },
+  openGraph: {
+    title: `Experience | ${siteName}`,
+    description:
+      "Professional experience, internships, and academic background in data science and software engineering.",
+    url: "/experience",
+  },
+  twitter: {
+    title: `Experience | ${siteName}`,
+    description:
+      "Roles at AI4ALL, Capital One, and Cornell — skills and impact.",
+  },
+};
+
 export default function ExperiencePage() {
   return (
     <div className="min-h-screen bg-neutral-50">
