@@ -368,7 +368,7 @@ export default function ExperiencePage() {
           ].map((course, index) => (
             <div key={course} className="group p-6 border-l-4 border-gray-200 hover:border-gray-900 bg-white hover:bg-gray-50 transition-all">
               <div className="flex items-start space-x-4">
-                <span className="text-sm font-mono text-gray-400 group-hover:text-gray-900 transition-colors">
+                <span className="text-sm font-mono text-gray-600 group-hover:text-gray-900 transition-colors">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <p className="text-gray-700 group-hover:text-gray-900 transition-colors">{course}</p>
