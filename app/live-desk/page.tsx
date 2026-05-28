@@ -117,49 +117,49 @@ export default function LiveDeskPage() {
         )}
 
         {!loading && !error && items.length > 0 && (
-          <ul className="flex gap-3 overflow-x-auto pb-1 snap-x snap-mandatory">
+          <ul className="max-w-3xl divide-y divide-gray-200 border-t border-gray-200">
             {items.map((item) => {
               const isRedacted = item.visibility !== "public";
+              const tag =
+                item.visibility === "private"
+                  ? "private"
+                  : item.visibility === "external-private"
+                    ? "private collaboration"
+                    : item.visibility === "external"
+                      ? "collaboration"
+                      : null;
 
               return (
                 <li
                   key={item.id}
-                  className="snap-start shrink-0 w-[11.5rem] sm:w-[12.5rem] flex flex-col justify-between min-h-[7rem] p-3 rounded-xl border border-gray-200 bg-white hover:border-gray-400 transition-colors"
+                  className="flex items-center justify-between gap-4 py-3.5"
                 >
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <p className="text-xs text-gray-900 leading-snug line-clamp-3 flex-1">
+                  <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                    <p className="text-sm text-gray-900 truncate">
                       {item.title}
                     </p>
-                    <time
-                      dateTime={item.createdAt}
-                      className="text-[10px] text-gray-400 shrink-0 tabular-nums"
-                    >
-                      {formatTime(item.createdAt)}
-                    </time>
-                  </div>
-
-                  <div className="mt-auto">
-                    {isRedacted ? (
-                      <p className="text-[10px] text-gray-400 uppercase tracking-wide">
-                        {item.visibility === "private"
-                          ? "private"
-                          : item.visibility === "external-private"
-                            ? "private collaboration"
-                            : "collaboration"}
-                      </p>
-                    ) : (
-                      <>
-                        {item.body && (
-                          <p className="text-[11px] text-gray-500 line-clamp-2 mb-1">
-                            {item.body}
-                          </p>
-                        )}
-                        <p className="text-[10px] text-gray-400 font-mono truncate">
-                          {item.repo.split("/")[1] ?? item.repo}
-                        </p>
-                      </>
+                    {tag && (
+                      <span className="text-[10px] text-gray-400 uppercase tracking-wide shrink-0">
+                        {tag}
+                      </span>
+                    )}
+                    {!isRedacted && item.body && (
+                      <span className="hidden sm:inline text-sm text-gray-500 truncate">
+                        · {item.body}
+                      </span>
+                    )}
+                    {!isRedacted && (
+                      <span className="hidden md:inline text-xs text-gray-400 font-mono shrink-0">
+                        · {item.repo.split("/")[1] ?? item.repo}
+                      </span>
                     )}
                   </div>
+                  <time
+                    dateTime={item.createdAt}
+                    className="text-xs text-gray-400 shrink-0 tabular-nums"
+                  >
+                    {formatTime(item.createdAt)}
+                  </time>
                 </li>
               );
             })}
