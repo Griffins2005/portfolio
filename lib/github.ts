@@ -1,7 +1,11 @@
 export const GITHUB_USERNAME =
   process.env.GITHUB_USERNAME?.trim() || "Griffins2005";
 
-export type RepoVisibility = "public" | "private" | "external";
+export type RepoVisibility =
+  | "public"
+  | "private"
+  | "external"
+  | "external-private";
 
 export type LiveDeskItem = {
   id: string;
@@ -20,9 +24,13 @@ export type GitHubEvent = {
   id: string;
   type: string;
   created_at: string;
+  /** False when the event occurred on a private repository (authenticated feed only). */
+  public?: boolean;
   repo: { name: string; url: string };
   payload: Record<string, unknown>;
 };
+
+export const LIVE_DESK_ACTIVITY_LIMIT = 15;
 
 const ACTION_LABELS: Record<string, string> = {
   opened: "Opened",
@@ -75,10 +83,28 @@ function pushCommitCount(payload: Record<string, unknown>): number {
   return 1;
 }
 
-function wherePhrase(visibility: "private" | "external"): string {
-  return visibility === "private"
-    ? "a private repo"
-    : "another person's repo";
+type RedactedVisibility = Exclude<RepoVisibility, "public">;
+
+function wherePhrase(visibility: RedactedVisibility): string {
+  switch (visibility) {
+    case "private":
+      return "a private repo";
+    case "external":
+      return "another person's repo";
+    case "external-private":
+      return "another person's private repo";
+  }
+}
+
+function redactedRepoLabel(visibility: RedactedVisibility): string {
+  switch (visibility) {
+    case "private":
+      return "Private";
+    case "external":
+      return "Collaboration";
+    case "external-private":
+      return "Private collaboration";
+  }
 }
 
 function reviewStateLabel(state: string | undefined): string {
@@ -95,18 +121,24 @@ function reviewStateLabel(state: string | undefined): string {
 }
 
 export function getRepoVisibility(
-  repoName: string,
+  event: GitHubEvent,
   privateRepos: Set<string>,
   username: string
 ): RepoVisibility {
-  if (privateRepos.has(repoName)) return "private";
-  if (repoOwner(repoName) !== username.toLowerCase()) return "external";
+  const isPrivate =
+    event.public === false || privateRepos.has(event.repo.name);
+  const isExternal =
+    repoOwner(event.repo.name) !== username.toLowerCase();
+
+  if (isPrivate && isExternal) return "external-private";
+  if (isPrivate) return "private";
+  if (isExternal) return "external";
   return "public";
 }
 
 function redactEvent(
   event: GitHubEvent,
-  visibility: "private" | "external"
+  visibility: RedactedVisibility
 ): LiveDeskItem {
   const where = wherePhrase(visibility);
   const payload = event.payload;
@@ -115,7 +147,7 @@ function redactEvent(
     type: event.type,
     title: "",
     body: "",
-    repo: visibility === "private" ? "Private" : "Collaboration",
+    repo: redactedRepoLabel(visibility),
     repoUrl: "",
     createdAt: event.created_at,
     visibility,
@@ -221,11 +253,7 @@ export function parseGitHubEvents(
 
   return events
     .map((event) => {
-      const visibility = getRepoVisibility(
-        event.repo.name,
-        privateRepos,
-        username
-      );
+      const visibility = getRepoVisibility(event, privateRepos, username);
       if (visibility !== "public") {
         return redactEvent(event, visibility);
       }

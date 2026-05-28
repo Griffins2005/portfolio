@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import {
   GITHUB_USERNAME,
+  LIVE_DESK_ACTIVITY_LIMIT,
   parseGitHubEvents,
   type GitHubEvent,
   type LiveDeskItem,
@@ -35,8 +36,8 @@ export async function GET() {
 
   try {
     const eventsPath = token
-      ? `https://api.github.com/users/${GITHUB_USERNAME}/events?per_page=30`
-      : `https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=30`;
+      ? `https://api.github.com/users/${GITHUB_USERNAME}/events?per_page=100`
+      : `https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=100`;
 
     const res = await fetch(eventsPath, { headers, cache: "no-store" });
 
@@ -58,7 +59,7 @@ export async function GET() {
     const items = parseGitHubEvents(events, {
       privateRepos,
       username: GITHUB_USERNAME,
-    });
+    }).slice(0, LIVE_DESK_ACTIVITY_LIMIT);
 
     cache = { items, fetchedAt: now };
 
