@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/experience",
     "/projects",
+    "/live-desk",
     "/extracurriculars",
     "/orgs",
   ] as const;
