@@ -15,4 +15,4 @@ export function getSiteUrl(): string {
 export const siteName = "Griffins Kiptanui Lelgut Too";
 
 export const defaultDescription =
-  "Cornell Information Science student (’28) — data science, full-stack development, machine learning, AI, and blockchain. Portfolio, projects, and experience.";
+  "Portfolio of Griffins Kiptanui Lelgut Too — Cornell Information Science student (’28) specializing in data science, full-stack development, machine learning, AI, and blockchain. Explore projects, internships, and campus leadership.";

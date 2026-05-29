@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/lib/json-ld";
 import { siteName } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -23,5 +24,15 @@ export default function LiveDeskLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Live Desk", path: "/live-desk" },
+        ]}
+      />
+      {children}
+    </>
+  );
 }

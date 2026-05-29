@@ -78,20 +78,11 @@ export const metadata: Metadata = {
     siteName: `${siteName} — Portfolio`,
     title: `${siteName} | Data Science & Full-Stack Developer`,
     description: defaultDescription,
-    images: [
-      {
-        url: "/headshot.jpeg",
-        width: 1200,
-        height: 1200,
-        alt: `${siteName} — professional headshot`,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteName} | Portfolio`,
     description: defaultDescription,
-    images: ["/headshot.jpeg"],
     creator: "@K_Griffins8",
   },
 };
