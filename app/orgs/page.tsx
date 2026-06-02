@@ -1,25 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { BreadcrumbJsonLd } from "@/lib/json-ld";
 import { siteName } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Organizations",
-  description: `Student organizations and leadership — ${siteName}: Cornell Blockchain Club, URMC, Kenyans at Cornell, and community roles.`,
-  alternates: {
-    canonical: "/orgs",
-  },
-  openGraph: {
-    title: `Organizations | ${siteName}`,
-    description:
-      "Featured orgs: blockchain, computing, cultural identity, and campus leadership.",
-    url: "/orgs",
-  },
-  twitter: {
-    title: `Organizations | ${siteName}`,
-    description:
-      "Cornell clubs and leadership in tech and community.",
-  },
-};
+  description: `Student organizations and campus leadership — ${siteName}: Cornell Blockchain Accelerator subteam, East Africans Together, CodePath, and community roles at Cornell University.`,
+  path: "/orgs",
+});
 
 export default function OrgsPage() {
   return (
@@ -67,31 +54,39 @@ export default function OrgsPage() {
               <p className="text-gray-600">Cornell University | Ithaca, NY</p>
             </div>
             
-            {/* Position 1: Member - Subteam Engineering */}
+            {/* Position 1: Member - Accelerator Subteam */}
             <div className="mb-10">
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <p className="text-lg font-medium text-gray-900">Member - Subteam Engineering</p>
-                  <p className="text-sm text-gray-500">Aug 2025 - Present</p>
+                  <p className="text-lg font-medium text-gray-900">Member — Accelerator Subteam</p>
+                  <p className="text-sm text-gray-500">Jan 2025 - Present</p>
                 </div>
               </div>
               <ul className="space-y-2 text-gray-600">
                 <li className="flex gap-3">
                   <span className="text-gray-400 mt-1">•</span>
-                  <span>Actively engage in cutting-edge research and development of decentralized applications, smart contract programming with Solidity, and blockchain protocol analysis</span>
+                  <span>Prepared for the club acccelerator for the next semester</span>
                 </li>
+              </ul>
+            </div>
+
+            {/* Position 2: Member - Subteam Engineering */}
+            <div className="mb-10">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <p className="text-lg font-medium text-gray-900">Member — Subteam Engineering</p>
+                  <p className="text-sm text-gray-500">Aug 2025 - Dec 2025</p>
+                </div>
+              </div>
+              <ul className="space-y-2 text-gray-600">
                 <li className="flex gap-3">
                   <span className="text-gray-400 mt-1">•</span>
-                  <span>Collaborate with talented peers on innovative blockchain projects, attend technical workshops with industry leaders, and contribute to Cornell's vibrant Web3 ecosystem</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-gray-400 mt-1">•</span>
-                  <span>Participate in hackathons and blockchain competitions, building practical solutions that explore the transformative potential of decentralized technologies</span>
+                  <span>Built and shipped blockchain projects with the engineering subteam, contributing to smart contract development and decentralized application prototypes</span>
                 </li>
               </ul>
             </div>
             
-            {/* Position 2: Explorer */}
+            {/* Position 3: Explorer */}
             <div>
               <div className="flex items-start justify-between mb-4">
                 <div>

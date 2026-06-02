@@ -1,29 +1,27 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
+import { BreadcrumbJsonLd } from "@/lib/json-ld";
 import { siteName } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Extracurriculars",
-  description: `Conferences, programs, and activities outside the classroom — AfroTech, Cornell Blockchain Conference, SMART Kenya, and more — ${siteName}.`,
-  alternates: {
-    canonical: "/extracurriculars",
-  },
-  openGraph: {
-    title: `Extracurriculars | ${siteName}`,
-    description:
-      "Highlights from conferences, field programs, and student activities.",
-    url: "/extracurriculars",
-  },
-  twitter: {
-    title: `Extracurriculars | ${siteName}`,
-    description:
-      "Conferences, travel programs, and community engagement.",
-  },
-};
+  description: `Conferences, field programs, and student activities — ${siteName}: AfroTech 2025, Cornell Blockchain Conference, SMART Kenya, EAST leadership, and campus life at Cornell.`,
+  path: "/extracurriculars",
+});
 
 export default function ExtracurricularsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Extracurriculars", path: "/extracurriculars" },
+        ]}
+      />
+      {children}
+    </>
+  );
 }

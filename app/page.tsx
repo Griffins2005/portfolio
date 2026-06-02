@@ -1,33 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react";
-const exploreLinks = [
-  {
-    href: "/experience",
-    title: "Experience",
-    description: "Internships at AI4ALL, Capital One, and Cornell research roles.",
-  },
-  {
-    href: "/projects",
-    title: "Projects",
-    description: "Full-stack apps, ML models, and blockchain projects on GitHub.",
-  },
-  {
-    href: "/live-desk",
-    title: "Live Desk",
-    description: "Real-time view of what I'm building and contributing on GitHub.",
-  },
-  {
-    href: "/orgs",
-    title: "Organizations",
-    description: "Leadership in Cornell Blockchain, URMC, and campus communities.",
-  },
-  {
-    href: "/extracurriculars",
-    title: "Extracurriculars",
-    description: "AfroTech, SMART Kenya, blockchain conferences, and campus life.",
-  },
-] as const;
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export default function Home() {
   return (
@@ -68,8 +40,10 @@ export default function Home() {
               </div>
 
               <p className="text-base sm:text-lg text-gray-500 pt-2">
-                Information Science at Cornell &apos;28 — building accessible,
-                data-driven software with ethical AI and human-centered design.
+                Information Science (Data Science & Interactive Technology concentration) at Cornell
+                &apos;28 and AI minor. Building
+                accessible, data-driven software with ethical AI and
+                human-centered design.
               </p>
             </div>
 
@@ -153,7 +127,7 @@ export default function Home() {
             </div>
             <div className="space-y-3 sm:space-y-4 text-gray-600 leading-relaxed text-sm sm:text-base">
               <p>
-                I&apos;m a sophomore at Cornell University studying Information
+                I&apos;m a junior at Cornell University studying Information
                 Science, with a passion for building accessible, data-driven
                 solutions that make a real impact.
               </p>
@@ -206,63 +180,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-24">
-        <div className="flex items-end justify-between border-b-2 border-gray-900 pb-4 mb-8">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
-              Explore the portfolio
-            </h2>
-            <p className="text-gray-600 mt-2 text-sm sm:text-base">
-              Work, projects, and community involvement at Cornell and beyond.
-            </p>
-          </div>
-        </div>
-        <nav aria-label="Portfolio sections">
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {exploreLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="group flex h-full flex-col justify-between p-6 bg-white border-2 border-gray-200 rounded-2xl hover:border-gray-900 transition-colors"
-                >
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-gray-700">
-                      {link.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                      {link.description}
-                    </p>
-                  </div>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-gray-900">
-                    View {link.title.toLowerCase()}
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                  </span>
-                </Link>
-              </li>
-            ))}
-            <li>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-full flex-col justify-between p-6 bg-gray-900 text-white rounded-2xl hover:bg-gray-800 transition-colors"
-              >
-                <div>
-                  <h3 className="text-lg font-semibold">Resume</h3>
-                  <p className="mt-2 text-sm text-gray-300 leading-relaxed">
-                    Download a PDF summary of experience, skills, and education.
-                  </p>
-                </div>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium">
-                  Open resume
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </a>
-            </li>
-          </ul>
-        </nav>
       </section>
     </div>
   );

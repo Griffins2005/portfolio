@@ -6,7 +6,7 @@ import "./globals.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import PersonJsonLd from "./components/PersonJsonLd";
-import { defaultDescription, getSiteUrl, siteName } from "@/lib/site";
+import { defaultDescription, defaultTitle, getSiteUrl, siteKeywords, siteName, twitterHandle } from "@/lib/site";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -20,26 +20,12 @@ const site = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(site),
   title: {
-    default: `${siteName} | Data Science & Full-Stack Developer`,
+    default: defaultTitle,
     template: `%s | ${siteName}`,
   },
   description: defaultDescription,
   applicationName: `${siteName} Portfolio`,
-  keywords: [
-    "Griffins Kiptanui Lelgut Too",
-    "Griffins Lelgut",
-    "Cornell University",
-    "Information Science",
-    "Data Science",
-    "Machine Learning",
-    "Full-Stack Developer",
-    "Python",
-    "React",
-    "Next.js",
-    "Blockchain",
-    "Kenya",
-    "Ithaca",
-  ],
+  keywords: [...siteKeywords],
   authors: [{ name: siteName, url: site }],
   creator: siteName,
   publisher: siteName,
@@ -76,14 +62,28 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: `${siteName} — Portfolio`,
-    title: `${siteName} | Data Science & Full-Stack Developer`,
+    title: defaultTitle,
     description: defaultDescription,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: defaultTitle,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Portfolio`,
+    title: defaultTitle,
     description: defaultDescription,
-    creator: "@K_Griffins8",
+    creator: twitterHandle,
+    site: twitterHandle,
+    images: ["/opengraph-image"],
+  },
+  other: {
+    "profile:first_name": "Griffins",
+    "profile:last_name": "Lelgut Too",
   },
 };
 

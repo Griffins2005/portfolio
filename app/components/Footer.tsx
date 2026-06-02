@@ -1,42 +1,9 @@
-import Link from "next/link";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
-
-const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/experience", label: "Experience" },
-  { href: "/projects", label: "Projects" },
-  { href: "/live-desk", label: "Live Desk" },
-  { href: "/orgs", label: "Organizations" },
-  { href: "/extracurriculars", label: "Extracurriculars" },
-] as const;
 
 export default function Footer() {
   return (
     <footer className="border-t border-gray-100 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-        <nav
-          aria-label="Footer navigation"
-          className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-sm"
-        >
-          {footerLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            Resume
-          </a>
-        </nav>
-
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
             <p className="text-xs sm:text-sm font-medium text-gray-900">

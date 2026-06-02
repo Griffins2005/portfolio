@@ -33,7 +33,7 @@ export default function ExtracurricularCarousel({
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-16">
       <div className="bg-white border-2 border-gray-200 rounded-3xl p-6 sm:p-10 shadow-lg">
         <div className="relative">
           <div>

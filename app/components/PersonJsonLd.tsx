@@ -1,21 +1,27 @@
-import { getSiteUrl, siteName } from "@/lib/site";
-
-const sameAs = [
-  "https://github.com/Griffins2005",
-  "https://www.linkedin.com/in/griffins-kiptanui-374a1a277",
-  "https://x.com/K_Griffins8",
-] as const;
+import {
+  defaultDescription,
+  education,
+  email,
+  getSiteUrl,
+  location,
+  siteName,
+  socialUrls,
+  tagline,
+} from "@/lib/site";
 
 const knowsAbout = [
   "Data Science",
   "Machine Learning",
   "Full-Stack Development",
   "Artificial Intelligence",
-  "Blockchain",
+  "Information Science",
+  education.minor,
   "Python",
   "React",
   "Next.js",
-  "Information Science",
+  "Flutter",
+  "Firebase",
+  "FastAPI",
 ] as const;
 
 export default function PersonJsonLd() {
@@ -30,24 +36,39 @@ export default function PersonJsonLd() {
     url: base,
     image: `${base}/headshot.jpeg`,
     jobTitle: "Data Science & Full-Stack Developer",
-    description:
-      "Cornell Information Science student building data-driven software, ML systems, and full-stack applications.",
-    email: "gkl39@cornell.edu",
+    description: `Cornell ${education.degree} student (${education.concentration} concentration, ${education.minor} minor) building data-driven software, ML systems, and full-stack applications.`,
+    email,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ithaca",
+      addressRegion: "NY",
+      addressCountry: "US",
+    },
     nationality: {
       "@type": "Country",
       name: "Kenya",
     },
-    affiliation: {
+    memberOf: {
       "@type": "CollegeOrUniversity",
-      name: "Cornell University",
+      name: education.university,
       url: "https://www.cornell.edu",
     },
-    alumniOf: {
+    affiliation: {
       "@type": "CollegeOrUniversity",
-      name: "Cornell University",
+      name: education.university,
+      url: "https://www.cornell.edu",
+    },
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Student",
+      occupationLocation: {
+        "@type": "City",
+        name: location,
+      },
+      skills: knowsAbout.join(", "),
     },
     knowsAbout: [...knowsAbout],
-    sameAs: [...sameAs],
+    sameAs: [socialUrls.github, socialUrls.linkedin, socialUrls.twitter],
   };
 
   const website = {
@@ -56,9 +77,12 @@ export default function PersonJsonLd() {
     "@id": `${base}/#website`,
     name: `${siteName} — Portfolio`,
     url: base,
-    description:
-      "Portfolio of Griffins Kiptanui Lelgut Too: projects, experience, and organizations in data science, ML, and full-stack development.",
+    description: defaultDescription,
     inLanguage: "en-US",
+    about: {
+      "@type": "Person",
+      "@id": `${base}/#person`,
+    },
     author: {
       "@type": "Person",
       "@id": `${base}/#person`,
@@ -75,6 +99,8 @@ export default function PersonJsonLd() {
     "@id": `${base}/#profilepage`,
     url: base,
     name: `${siteName} — Portfolio`,
+    description: defaultDescription,
+    dateModified: new Date().toISOString().split("T")[0],
     mainEntity: {
       "@type": "Person",
       "@id": `${base}/#person`,

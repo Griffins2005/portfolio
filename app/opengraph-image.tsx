@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { defaultDescription, siteName } from "@/lib/site";
+import { defaultDescription, siteName, tagline } from "@/lib/site";
 
 export const alt = `${siteName} — Portfolio`;
 export const size = { width: 1200, height: 630 };
@@ -67,7 +67,7 @@ export default function OgImage() {
             maxWidth: "820px",
           }}
         >
-          Data Science · Full-Stack · AI · Blockchain
+          {tagline}
         </div>
         <div
           style={{

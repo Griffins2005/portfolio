@@ -1,25 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { BreadcrumbJsonLd } from "@/lib/json-ld";
 import { siteName } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Experience",
-  description: `Internships, research, and coursework — ${siteName}: AI4ALL, Capital One, teaching, and technical skills at Cornell.`,
-  alternates: {
-    canonical: "/experience",
-  },
-  openGraph: {
-    title: `Experience | ${siteName}`,
-    description:
-      "Professional experience, internships, and academic background in data science and software engineering.",
-    url: "/experience",
-  },
-  twitter: {
-    title: `Experience | ${siteName}`,
-    description:
-      "Roles at AI4ALL, Capital One, and Cornell — skills and impact.",
-  },
-};
+  description: `Professional experience and internships — ${siteName}: CRAIIVE full-stack intern, AI4ALL, Cornell teaching assistant, Capital One AEIP, and AMRC leadership at Cornell.`,
+  path: "/experience",
+});
 
 export default function ExperiencePage() {
   return (
@@ -60,6 +47,32 @@ export default function ExperiencePage() {
           </h2>
         </div>
         <div className="space-y-16">
+          {/* CRAIIVE */}
+          <div className="border-l-2 border-gray-200 pl-8">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <a href="https://craive.app/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors">
+                CRAIIVE
+              </a>
+            </h3>
+            <p className="text-lg font-medium text-gray-900 mb-1">Full-Stack Intern</p>
+            <p className="text-gray-600 mb-1">AI Food-Inventory Startup | Remote</p>
+            <p className="text-sm text-gray-500 mb-4">Sep 2025 - Present</p>
+            <ul className="space-y-2 text-gray-600">
+              <li className="flex gap-3">
+                <span className="text-gray-400 mt-1">•</span>
+                <span>Built a unified Gemini recommendation pipeline that learns from 6+ types of user interactions to power a personalized recipe feed that auto-refreshes with 200+ suggestions, keeping users engaged without manual setup.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gray-400 mt-1">•</span>
+                <span>Fixed mismatches between AI-generated recipes and what users actually have on hand by validating suggestions against live pantry, fridge, and freezer inventory, with quantity-aware updates so stock stays accurate after cooking or removing items.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gray-400 mt-1">•</span>
+                <span>Secured multi-tenant user data with owner-scoped Firestore rules across 8 collections and a two-stage Gemini safety filter for allergens and dietary restrictions, blocking unsafe recipes before they surface anywhere in the app.</span>
+              </li>
+            </ul>
+          </div>
+
           {/* AI4ALL */}
           <div className="border-l-2 border-gray-200 pl-8">
             <div className="mb-6">
@@ -72,7 +85,7 @@ export default function ExperiencePage() {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <p className="text-lg font-medium text-gray-900">Accelerator</p>
-                  <p className="text-sm text-gray-500">Jan 2026 - Present</p>
+                  <p className="text-sm text-gray-500">Jan 2026 - Mar 2026</p>
                 </div>
               </div>
               <ul className="space-y-2 text-gray-600">
@@ -138,32 +151,6 @@ export default function ExperiencePage() {
               <li className="flex gap-3">
                 <span className="text-gray-400 mt-1">•</span>
                 <span>Mentor students in problem-solving approaches and clean coding practices, significantly improving their technical proficiency</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Craiive */}
-          <div className="border-l-2 border-gray-200 pl-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              <a href="https://craive.app/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors">
-                Craiive
-              </a>
-            </h3>
-            <p className="text-lg font-medium text-gray-900 mb-1">Full-Stack Intern</p>
-            <p className="text-gray-600 mb-1">AI Food-Inventory Startup | Remote</p>
-            <p className="text-sm text-gray-500 mb-4">Sep 2025 - Present</p>
-            <ul className="space-y-2 text-gray-600">
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Developed full-stack AI-powered food inventory application using Flutter, Dart, Firebase, and Python in fast-paced startup environment</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Successfully integrated machine learning models into backend APIs and optimized schema design for scalability</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Designed intuitive UX and implemented responsive frontend components, contributing to product-market fit validation</span>
               </li>
             </ul>
           </div>

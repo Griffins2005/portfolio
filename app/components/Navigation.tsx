@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { X } from "lucide-react";
 
+import { siteShortName } from "@/lib/site";
+
 export default function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +32,7 @@ export default function Navigation() {
             <Link href="/" className="flex items-center space-x-3 group" onClick={closeMobileMenu}>
               <Image
                 src="/g.png"
-                alt="GL Logo"
+                alt={`${siteShortName} — portfolio home`}
                 width={32}
                 height={32}
                 className="object-contain transition-transform group-hover:scale-105"

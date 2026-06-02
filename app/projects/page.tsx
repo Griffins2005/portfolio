@@ -10,11 +10,12 @@ export default function ProjectsPage() {
     {
       id: 1,
       title: "Nestopia",
-      category: ["fullstack", "blockchain"],
-      tags: "Full-Stack • AI • Blockchain",
-      description: "Engineered a full-stack rental housing platform matching renters with landlords through intelligent compatibility scoring algorithms that analyze 12+ weighted criteria including budget, location, amenities, and lifestyle preferences. Implemented JWT authentication, Google OAuth, machine learning-enhanced matching with collaborative filtering, and integrated FastAPI backend with React frontend, PostgreSQL database, and Celery background workers for daily match computations serving personalized property recommendations.",
-      tech: ["React", "FastAPI", "PostgreSQL", "Celery", "ML"],
+      category: ["fullstack", "ml"],
+      tags: "Full-Stack • ML",
+      description: "Built a full-stack rental housing platform that matches renters with landlords based on housing preferences, property features, and per-listing tenant requirements. Compatibility scores appear on listings, detail pages, and a daily matches feed. Implemented httpOnly session auth with email/password, Google OAuth, and TOTP 2FA; landlord listing CRUD with geocoding and photo uploads; renter preferences and saved homes; rental application workflows with tours and move-in; and Leaflet/OpenStreetMap browsing with Nominatim search. Deployed the React frontend on Vercel and the FastAPI API on Railway with PostgreSQL and persistent upload storage.",
+      tech: ["React 19", "FastAPI", "PostgreSQL", "Leaflet", "SQLAlchemy", "Celery"],
       links: [
+        { label: "Website", url: "https://nestopia-rental.vercel.app" },
         { label: "View Repository", url: "https://github.com/Griffins2005/Nestopia" }
       ]
     },

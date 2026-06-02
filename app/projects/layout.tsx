@@ -1,25 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 import { BreadcrumbJsonLd } from "@/lib/json-ld";
 import { siteName } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Projects",
-  description: `Selected software and ML projects by ${siteName}: full-stack apps, AI, blockchain, and data science — Nestopia, Cloudflare AI tools, NLP, and more.`,
-  alternates: {
-    canonical: "/projects",
-  },
-  openGraph: {
-    title: `Projects | ${siteName}`,
-    description:
-      "Full-stack, AI, and data science projects including Nestopia, CF AI API Copilot, and machine learning work.",
-    url: "/projects",
-  },
-  twitter: {
-    title: `Projects | ${siteName}`,
-    description:
-      "Full-stack, AI, and data science portfolio projects.",
-  },
-};
+  description: `Software and ML portfolio projects by ${siteName} — Nestopia rental housing platform (live demo), CRAIIVE, Cloudflare AI API Copilot, NLP news summarizer, and data science work.`,
+  path: "/projects",
+});
 
 export default function ProjectsLayout({
   children,
