@@ -8,6 +8,9 @@ import {
 } from "@/lib/github";
 import { getPrivateRepoNames } from "@/lib/github-repos";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const CACHE_TTL_MS = 60_000;
 
 let cache: { items: LiveDeskItem[]; fetchedAt: number } | null = null;
@@ -24,7 +27,7 @@ export async function GET() {
     });
   }
 
-  const token = process.env.GITHUB_TOKEN;
+  const token = process.env.GITHUB_TOKEN?.trim();
   const headers: HeadersInit = {
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
@@ -43,9 +46,11 @@ export async function GET() {
 
     if (!res.ok) {
       const message =
-        res.status === 403
-          ? "GitHub rate limit reached. Try again shortly or add GITHUB_TOKEN on Vercel."
-          : `GitHub API error (${res.status})`;
+        res.status === 401
+          ? "GitHub rejected GITHUB_TOKEN. Replace it in Vercel env vars."
+          : res.status === 403
+            ? "GitHub rate limit reached. Try again shortly or add GITHUB_TOKEN on Vercel."
+            : `GitHub API error (${res.status})`;
       return NextResponse.json({ error: message }, { status: res.status });
     }
 
