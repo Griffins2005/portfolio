@@ -9,17 +9,38 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: 1,
-      title: "Nestopia",
-      category: ["fullstack", "blockchain"],
-      tags: "Full-Stack • AI • Blockchain",
-      description: "Engineered a full-stack rental housing platform matching renters with landlords through intelligent compatibility scoring algorithms that analyze 12+ weighted criteria including budget, location, amenities, and lifestyle preferences. Implemented JWT authentication, Google OAuth, machine learning-enhanced matching with collaborative filtering, and integrated FastAPI backend with React frontend, PostgreSQL database, and Celery background workers for daily match computations serving personalized property recommendations.",
-      tech: ["React", "FastAPI", "PostgreSQL", "Celery", "ML"],
+      title: "ORCA",
+      category: ["ai", "fullstack"],
+      tags: "AI Agents • Guardrails • LTTS Hackathon",
+      description: "AI agent guardrail system built for the LTTS Hackathon (July 2026). Created the Policy Gate, a deterministic rule engine that screens every AI-agent action before execution, enforcing denylist, prompt-injection guard, least-privilege allowlist, and human-approval interlock rules. Designed a two-agent Governance Gate: a task agent reports confidence and a judge agent independently reviews output against task standards and safety data — high agreement continues the run, divergence freezes it.",
+      tech: ["Python", "FastAPI", "React", "LangGraph", "WebSockets"],
+      links: []
+    },
+    {
+      id: 2,
+      title: "Noteleaf",
+      category: ["fullstack", "ai"],
+      tags: "AI • Full-Stack • Privacy",
+      description: "Ambient AI meeting notetaker (April–June 2026). Engineered real-time speech transcription with the browser Web Speech API so all audio stays on-device. Classified each spoken sentence into actions, decisions, or insights in under 1 second, with AI recaps via NVIDIA Nemotron. Designed an 18-endpoint Fastify REST API with httpOnly-cookie JWT authentication and 30-day auto-rotating refresh tokens, shipped as a 4-service Docker Compose stack.",
+      tech: ["Next.js", "Fastify", "TypeScript", "PostgreSQL", "Prisma", "Docker"],
       links: [
+        { label: "View Repository", url: "https://github.com/Griffins2005/noteleaf" }
+      ]
+    },
+    {
+      id: 3,
+      title: "Nestopia",
+      category: ["fullstack", "ml"],
+      tags: "Full-Stack • ML",
+      description: "Built a full-stack rental housing platform that matches renters with landlords based on housing preferences, property features, and per-listing tenant requirements. Compatibility scores appear on listings, detail pages, and a daily matches feed. Implemented httpOnly session auth with email/password, Google OAuth, and TOTP 2FA; landlord listing CRUD with geocoding and photo uploads; renter preferences and saved homes; rental application workflows with tours and move-in; and Leaflet/OpenStreetMap browsing with Nominatim search. Deployed the React frontend on Vercel and the FastAPI API on Railway with PostgreSQL and persistent upload storage.",
+      tech: ["React 19", "FastAPI", "PostgreSQL", "Leaflet", "SQLAlchemy", "Celery"],
+      links: [
+        { label: "Website", url: "https://nestopia-rental.vercel.app" },
         { label: "View Repository", url: "https://github.com/Griffins2005/Nestopia" }
       ]
     },
     {
-      id: 2,
+      id: 4,
       title: "CF AI API Copilot",
       category: ["fullstack", "ai"],
       tags: "AI • Full-Stack • Edge Computing",
@@ -30,7 +51,7 @@ export default function ProjectsPage() {
       ]
     },
     {
-      id: 3,
+      id: 5,
       title: "AI News Summarizer",
       category: ["ai"],
       tags: "AI • NLP • Machine Learning",
@@ -41,7 +62,7 @@ export default function ProjectsPage() {
       ]
     },
     {
-      id: 4,
+      id: 6,
       title: "Bank Marketing Analytics",
       category: ["datascience"],
       tags: "Data Science • Predictive Analytics",
@@ -52,7 +73,7 @@ export default function ProjectsPage() {
       ]
     },
     {
-      id: 5,
+      id: 7,
       title: "Trust-Based Product Analysis",
       category: ["datascience", "ai"],
       tags: "Data Science • Machine Learning • AI4ALL",
@@ -70,8 +91,7 @@ export default function ProjectsPage() {
     { id: "all", label: "All Projects" },
     { id: "fullstack", label: "Full-Stack" },
     { id: "ai", label: "AI & ML" },
-    { id: "datascience", label: "Data Science" },
-    { id: "blockchain", label: "Blockchain" }
+    { id: "datascience", label: "Data Science" }
   ];
 
   const filteredProjects = activeFilter === "all" 
@@ -128,7 +148,9 @@ export default function ProjectsPage() {
               <div className="mb-6 pt-2">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">{project.title}</h3>
-                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-gray-900 flex-shrink-0 ml-2 transition-colors" />
+                  {project.links.length > 0 && (
+                    <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-gray-900 flex-shrink-0 ml-2 transition-colors" />
+                  )}
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
@@ -152,21 +174,22 @@ export default function ProjectsPage() {
                 ))}
               </div>
 
-              {/* Links */}
-              <div className="flex flex-wrap gap-4">
-                {project.links.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-1.5 text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors group/link"
-                  >
-                    <span>{link.label}</span>
-                    <ExternalLink className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                  </a>
-                ))}
-              </div>
+              {project.links.length > 0 && (
+                <div className="flex flex-wrap gap-4">
+                  {project.links.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-1.5 text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors group/link"
+                    >
+                      <span>{link.label}</span>
+                      <ExternalLink className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -1,6 +1,22 @@
+import { createPageMetadata } from "@/lib/seo";
+import { BreadcrumbJsonLd } from "@/lib/json-ld";
+import { siteName } from "@/lib/site";
+
+export const metadata = createPageMetadata({
+  title: "Organizations",
+  description: `Student organizations and campus leadership — ${siteName}: treasurer of East Africans Students Together, Cornell Blockchain Club, and community roles at Cornell University.`,
+  path: "/orgs",
+});
+
 export default function OrgsPage() {
   return (
     <div className="min-h-screen bg-neutral-50">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Organizations", path: "/orgs" },
+        ]}
+      />
       {/* Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between border-b-2 border-gray-900 pb-4 gap-4 sm:gap-0">
@@ -33,50 +49,16 @@ export default function OrgsPage() {
         <div className="space-y-16">
           {/* Cornell Blockchain Club */}
           <div className="border-l-2 border-gray-200 pl-8">
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-gray-900">Cornell Blockchain Club</h3>
-              <p className="text-gray-600">Cornell University | Ithaca, NY</p>
-            </div>
-            
-            {/* Position 1: Member - Subteam Engineering */}
-            <div className="mb-10">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <p className="text-lg font-medium text-gray-900">Member - Subteam Engineering</p>
-                  <p className="text-sm text-gray-500">Aug 2025 - Present</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex gap-3">
-                  <span className="text-gray-400 mt-1">•</span>
-                  <span>Actively engage in cutting-edge research and development of decentralized applications, smart contract programming with Solidity, and blockchain protocol analysis</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-gray-400 mt-1">•</span>
-                  <span>Collaborate with talented peers on innovative blockchain projects, attend technical workshops with industry leaders, and contribute to Cornell's vibrant Web3 ecosystem</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-gray-400 mt-1">•</span>
-                  <span>Participate in hackathons and blockchain competitions, building practical solutions that explore the transformative potential of decentralized technologies</span>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Position 2: Explorer */}
-            <div>
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <p className="text-lg font-medium text-gray-900">Explorer</p>
-                  <p className="text-sm text-gray-500">Feb 2025 - Jul 2025</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex gap-3">
-                  <span className="text-gray-400 mt-1">•</span>
-                  <span>Demonstrated exceptional commitment and technical proficiency in blockchain technology, progressing to full member status within the engineering subteam</span>
-                </li>
-              </ul>
-            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Cornell Blockchain Club</h3>
+            <p className="text-lg font-medium text-gray-900 mb-1">Member</p>
+            <p className="text-gray-600 mb-1">Cornell University | Ithaca, NY</p>
+            <p className="text-sm text-gray-500 mb-4">February 2025 – Present</p>
+            <ul className="space-y-2 text-gray-600">
+              <li className="flex gap-3">
+                <span className="text-gray-400 mt-1">•</span>
+                <span>Participated in engineering workshops on decentralized systems and smart contracts.</span>
+              </li>
+            </ul>
           </div>
 
           {/* CodePath */}
@@ -106,9 +88,9 @@ export default function OrgsPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Cornell East Africans Together Club</h3>
             <p className="text-lg font-medium text-gray-900 mb-1">Treasurer</p>
             <p className="text-gray-600 mb-1">Cornell University | Ithaca, NY</p>
-            <p className="text-sm text-gray-500 mb-4">2024 - Present</p>
+            <p className="text-sm text-gray-500 mb-4">August 2025 – Present</p>
             <p className="text-gray-600">
-              Manage club finances, budget allocation, and fundraising initiatives while coordinating cultural showcases and mentorship programs celebrating East African heritage.
+              Manage the club budget, funding requests, and event finances.
             </p>
           </div>
         </div>
