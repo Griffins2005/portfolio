@@ -4,7 +4,7 @@ import { siteName } from "@/lib/site";
 
 export const metadata = createPageMetadata({
   title: "Projects",
-  description: `Software and ML portfolio projects by ${siteName} — Nestopia rental housing platform (live demo), CRAIIVE, Cloudflare AI API Copilot, NLP news summarizer, and data science work.`,
+  description: `Software and ML portfolio projects by ${siteName} — ORCA, Noteleaf, Nestopia rental housing platform, Cloudflare AI API Copilot, NLP news summarizer, and data science work.`,
   path: "/projects",
 });
 

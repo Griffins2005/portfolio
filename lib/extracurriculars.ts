@@ -37,7 +37,7 @@ export const activities: Activity[] = [
   {
     id: 4,
     title: "East Africans Students Together (EAST)",
-    date: "Treasurer",
+    date: "Treasurer · August 2025 – Present",
     location: "Cornell University",
     imageDescription:
       "Representing EAST at Black Life on the Hill (BLOTH) and AFCORNELL - field event organized by EAST",

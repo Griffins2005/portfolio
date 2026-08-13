@@ -6,19 +6,18 @@ import {
   location,
   siteName,
   socialUrls,
-  tagline,
+
 } from "@/lib/site";
 
 const knowsAbout = [
-  "Data Science",
-  "Machine Learning",
+  "Software Engineering",
   "Full-Stack Development",
-  "Artificial Intelligence",
+  "AI Agents",
   "Information Science",
-  education.minor,
   "Python",
   "React",
   "Next.js",
+  "LangGraph",
   "Flutter",
   "Firebase",
   "FastAPI",
@@ -35,8 +34,8 @@ export default function PersonJsonLd() {
     familyName: "Lelgut Too",
     url: base,
     image: `${base}/headshot.jpeg`,
-    jobTitle: "Data Science & Full-Stack Developer",
-    description: `Cornell ${education.degree} student (${education.concentration} concentration, ${education.minor} minor) building data-driven software, ML systems, and full-stack applications.`,
+    jobTitle: "Software Engineer",
+    description: `Cornell ${education.degree} student building AI agent systems, test automation, and full-stack applications.`,
     email,
     address: {
       "@type": "PostalAddress",

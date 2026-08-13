@@ -4,7 +4,7 @@ import { siteName } from "@/lib/site";
 
 export const metadata = createPageMetadata({
   title: "Experience",
-  description: `Professional experience and internships — ${siteName}: CRAIIVE full-stack intern, AI4ALL, Cornell teaching assistant, Capital One AEIP, and AMRC leadership at Cornell.`,
+  description: `Professional experience and internships — ${siteName}: LTSCT software engineering intern, CRAIIVE full-stack intern, AI4ALL, and Cornell teaching assistant.`,
   path: "/experience",
 });
 
@@ -47,6 +47,34 @@ export default function ExperiencePage() {
           </h2>
         </div>
         <div className="space-y-16">
+          {/* LTSCT */}
+          <div className="border-l-2 border-gray-200 pl-8">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Larsen &amp; Toubro Semiconductor Technologies (LTSCT)
+            </h3>
+            <p className="text-lg font-medium text-gray-900 mb-1">Software Engineering Intern</p>
+            <p className="text-gray-600 mb-1">Bengaluru, India</p>
+            <p className="text-sm text-gray-500 mb-4">June 2026 – August 2026</p>
+            <ul className="space-y-2 text-gray-600">
+              <li className="flex gap-3">
+                <span className="text-gray-400 mt-1">•</span>
+                <span>Developed a plugin-based Python test automation framework that executed 500+ official NIST test vectors at 100% conformance.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gray-400 mt-1">•</span>
+                <span>Built an AI debugging layer that automatically triaged every test failure and traced its root cause across the pipeline.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gray-400 mt-1">•</span>
+                <span>Projected a 70% reduction in engineer debugging time versus manual log inspection through automated AI-driven failure triage.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gray-400 mt-1">•</span>
+                <span>Automated extraction and parsing of test vectors across JSON, CSV, and TXT formats into standards-aligned validation reports.</span>
+              </li>
+            </ul>
+          </div>
+
           {/* CRAIIVE */}
           <div className="border-l-2 border-gray-200 pl-8">
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -54,21 +82,17 @@ export default function ExperiencePage() {
                 CRAIIVE
               </a>
             </h3>
-            <p className="text-lg font-medium text-gray-900 mb-1">Full-Stack Intern</p>
-            <p className="text-gray-600 mb-1">AI Food-Inventory Startup | Remote</p>
-            <p className="text-sm text-gray-500 mb-4">Sep 2025 - Present</p>
+            <p className="text-lg font-medium text-gray-900 mb-1">Software Engineering Intern, Full-Stack</p>
+            <p className="text-gray-600 mb-1">AI Food-Inventory Startup | Ithaca, NY</p>
+            <p className="text-sm text-gray-500 mb-4">September 2025 – May 2026</p>
             <ul className="space-y-2 text-gray-600">
               <li className="flex gap-3">
                 <span className="text-gray-400 mt-1">•</span>
-                <span>Built a unified Gemini recommendation pipeline that learns from 6+ types of user interactions to power a personalized recipe feed that auto-refreshes with 200+ suggestions, keeping users engaged without manual setup.</span>
+                <span>Integrated a Gemini API pipeline generating recipe suggestions from live inventory data across 3 production Flutter app screens.</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-gray-400 mt-1">•</span>
-                <span>Fixed mismatches between AI-generated recipes and what users actually have on hand by validating suggestions against live pantry, fridge, and freezer inventory, with quantity-aware updates so stock stays accurate after cooking or removing items.</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Secured multi-tenant user data with owner-scoped Firestore rules across 8 collections and a two-stage Gemini safety filter for allergens and dietary restrictions, blocking unsafe recipes before they surface anywhere in the app.</span>
+                <span>Optimized Firebase schema and indexing strategy, improving query reliability and cutting latency in recipe-generation workflows.</span>
               </li>
             </ul>
           </div>
@@ -135,132 +159,32 @@ export default function ExperiencePage() {
 
           {/* Teaching Assistant */}
           <div className="border-l-2 border-gray-200 pl-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Cornell CIS</h3>
-            <p className="text-lg font-medium text-gray-900 mb-1">Teaching Assistant — INFO 1300</p>
-            <p className="text-gray-600 mb-1">Introduction to Web Programming | Ithaca, NY</p>
-            <p className="text-sm text-gray-500 mb-4">Aug 2025 - Dec 2025</p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Cornell Ann S. Bowers College of Computing &amp; Information Science</h3>
+            <p className="text-lg font-medium text-gray-900 mb-1">Teaching Assistant — Intro to Web Development</p>
+            <p className="text-gray-600 mb-1">Ithaca, NY</p>
+            <p className="text-sm text-gray-500 mb-4">August 2025 – December 2025</p>
             <ul className="space-y-2 text-gray-600">
               <li className="flex gap-3">
                 <span className="text-gray-400 mt-1">•</span>
-                <span>Empower 110+ undergraduate students to master web development fundamentals including HTML5, CSS3, and JavaScript</span>
+                <span>Led weekly lab sections for 40+ students covering HTML, CSS, and JavaScript; office-hour support lifted class average by 10%.</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-gray-400 mt-1">•</span>
-                <span>Lead weekly lab sessions, grade assignments with detailed feedback, and conduct one-on-one debugging sessions</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Mentor students in problem-solving approaches and clean coding practices, significantly improving their technical proficiency</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Capital One */}
-          <div className="border-l-2 border-gray-200 pl-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Capital One</h3>
-            <p className="text-lg font-medium text-gray-900 mb-1">Analyst Early Internship Program (AEIP) Summit</p>
-            <p className="text-gray-600 mb-1">Virtual | McLean, VA</p>
-            <p className="text-sm text-gray-500 mb-4">August 2025</p>
-            <ul className="space-y-2 text-gray-600">
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Competitively selected for Capital One's exclusive AEIP Summit — immersive two-day experience exploring the intersection of data, business strategy, and technology</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Engaged in intensive business case workshops, developed data-driven product recommendations, and networked with senior analysts and leadership</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Gained valuable insights into analytics-driven decision-making, customer-first product development, and Capital One's innovative culture</span>
+                <span>Co-designed grading rubrics and automated evaluation scripts with course staff, reducing assignment turnaround time by 30%.</span>
               </li>
             </ul>
           </div>
 
           {/* Cornell AMRC */}
           <div className="border-l-2 border-gray-200 pl-8">
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-gray-900">Cornell AMRC (Accessible Media Resource Center)</h3>
-              <p className="text-gray-600">Student Disability Services | Ithaca, NY</p>
-            </div>
-            
-            {/* Position 1: Project Coordinator */}
-            <div className="mb-10">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <p className="text-lg font-medium text-gray-900">Project Coordinator</p>
-                  <p className="text-sm text-gray-500">May 2025 - Present</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex gap-3">
-                  <span className="text-gray-400 mt-1">•</span>
-                  <span>Manage project workflows, cross-team communications, and quality control for 50+ courses per semester, ensuring 100% on-time delivery of accessible course materials</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-gray-400 mt-1">•</span>
-                  <span>Reduced turnaround time from 5 to 3 days through process optimization and workflow improvements</span>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Position 2: Document Conversion Specialist */}
-            <div>
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <p className="text-lg font-medium text-gray-900">Document Conversion Specialist</p>
-                  <p className="text-sm text-gray-500">Sep 2024 - May 2025</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-gray-600">
-                <li className="flex gap-3">
-                  <span className="text-gray-400 mt-1">•</span>
-                  <span>Converted PDF materials to accessible formats (Plain Text Word, PDF) compatible with assistive technology, ensuring accuracy and proper formatting for students with disabilities</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Power Learn Project */}
-          <div className="border-l-2 border-gray-200 pl-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Power Learn Project</h3>
-            <p className="text-lg font-medium text-gray-900 mb-1">Full Stack Web Development</p>
-            <p className="text-gray-600 mb-1">Nairobi, Kenya</p>
-            <p className="text-sm text-gray-500 mb-4">Feb 2024 - Jun 2024</p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Accessible Media Resource Center, Student Disability Services</h3>
+            <p className="text-lg font-medium text-gray-900 mb-1">Project Coordinator</p>
+            <p className="text-gray-600 mb-1">Cornell University | Ithaca, NY</p>
+            <p className="text-sm text-gray-500 mb-4">May 2025 – Present</p>
             <ul className="space-y-2 text-gray-600">
               <li className="flex gap-3">
                 <span className="text-gray-400 mt-1">•</span>
-                <span>Competed in 2 major hackathons, successfully building and presenting scalable, innovative web applications under tight time constraints</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Transformed technical solutions into profitable business ventures generating $4,000 in annual revenue, demonstrating entrepreneurial acumen</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Mastered efficient Django backends and Dart frontends optimized for real-world deployment and user engagement</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* DirectEd Development Foundation */}
-          <div className="border-l-2 border-gray-200 pl-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">DirectEd Development Foundation</h3>
-            <p className="text-lg font-medium text-gray-900 mb-1">Full Stack Web Development</p>
-            <p className="text-gray-600 mb-1">Nairobi, Kenya</p>
-            <p className="text-sm text-gray-500 mb-4">Apr 2023 - Aug 2023</p>
-            <ul className="space-y-2 text-gray-600">
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Completed an intensive 10-week full-stack web development boot camp utilizing the MERN stack, gaining a strong foundation in both front-end and back-end development methodologies</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Developed a strong proficiency in key front-end technologies including HTML5, CSS, Tailwind CSS, and React.js, enabling the creation of dynamic, responsive, and user-friendly interfaces</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-gray-400 mt-1">•</span>
-                <span>Gained practical proficiency in troubleshooting, identifying and resolving API integration errors, front-end rendering bugs, and database query issues utilizing debugging tools and systematic problem-solving methodologies</span>
+                <span>Managed project workflows, assignment scheduling, and quality-control proofreading, delivering accessible formats to students.</span>
               </li>
             </ul>
           </div>
@@ -286,7 +210,7 @@ export default function ExperiencePage() {
               <h3 className="text-xl font-semibold text-gray-900">Languages</h3>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["Python", "Java", "JavaScript", "TypeScript", "Dart", "OCaml", "HTML", "CSS", "SQL", "R", "Solidity"].map((skill) => (
+              {["Python", "Java", "TypeScript", "JavaScript", "SQL", "Dart"].map((skill) => (
                 <span key={skill} className="px-3 py-1.5 bg-white text-gray-700 rounded-lg text-sm border border-gray-200 hover:border-gray-900 transition-colors">
                   {skill}
                 </span>
@@ -294,13 +218,12 @@ export default function ExperiencePage() {
             </div>
           </div>
 
-          {/* Frameworks & Libraries */}
           <div className="p-8 bg-gray-900 text-white rounded-2xl">
             <div className="mb-6">
-              <h3 className="text-xl font-semibold">Frameworks & Libraries</h3>
+              <h3 className="text-xl font-semibold">Frameworks</h3>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["Django", "FastAPI", "Flask", "React.js", "Next.js", "Node.js", "Flutter", "Cloudflare Workers", "Tailwind CSS", "Pandas", "NumPy", "scikit-learn", "SHAP", "HuggingFace", "Celery"].map((skill) => (
+              {["React", "Next.js", "Node.js", "FastAPI", "Django", "Flutter", "Tailwind CSS"].map((skill) => (
                 <span key={skill} className="px-3 py-1.5 bg-gray-800 text-gray-200 rounded-lg text-sm border border-gray-700 hover:bg-gray-700 transition-colors">
                   {skill}
                 </span>
@@ -308,31 +231,30 @@ export default function ExperiencePage() {
             </div>
           </div>
 
-          {/* Databases */}
           <div className="p-8 border-2 border-gray-900 rounded-2xl">
             <div className="mb-6">
-              <h3 className="text-xl font-semibold text-gray-900">Databases</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Developer Tools</h3>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["PostgreSQL", "MongoDB", "SQLite", "Redis", "Supabase", "Firebase"].map((skill) => (
+              {["Git", "Docker", "Linux", "CI/CD", "PostgreSQL", "MongoDB", "Firebase"].map((skill) => (
                 <span key={skill} className="px-3 py-1.5 bg-gray-50 text-gray-700 rounded-lg text-sm border border-gray-200 hover:border-gray-900 transition-colors">
                   {skill}
                 </span>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Certifications & Languages */}
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-8 bg-white rounded-2xl border-2 border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">Certifications</h3>
-            <p className="text-gray-700">Google Data Analytics Professional Certificate</p>
-          </div>
-          
-          <div className="p-8 bg-white rounded-2xl border-2 border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">Spoken Languages</h3>
-            <p className="text-gray-700">English • Swahili • Kalenjin</p>
+          <div className="p-8 bg-gray-50 rounded-2xl border-2 border-gray-200">
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold text-gray-900">Libraries</h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {["LangGraph", "React Query", "HuggingFace Transformers", "Pandas"].map((skill) => (
+                <span key={skill} className="px-3 py-1.5 bg-white text-gray-700 rounded-lg text-sm border border-gray-200 hover:border-gray-900 transition-colors">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -349,21 +271,16 @@ export default function ExperiencePage() {
         </div>
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            "Introductory Statistics",
-            "Introductory Python Programming",
-            "Calculus I",
-            "Calculus II",
-            "Design & Web Programming (HTML, CSS, JavaScript)",
-            "Object-Oriented Programming and Data Structures using Java",
-            "Introduction to Data Science using Python",
-            "Data Structures and Functional Programming using OCaml",
+            "Design & Web Programming",
+            "Object-Oriented Programming and Data Structures",
+            "Intro to Data Science",
+            "Data Structures and Functional Programming",
             "Linear Algebra for Data Science",
-            "Choices and Consequences in Computing"
           ].map((course, index) => (
             <div key={course} className="group p-6 border-l-4 border-gray-200 hover:border-gray-900 bg-white hover:bg-gray-50 transition-all">
               <div className="flex items-start space-x-4">
                 <span className="text-sm font-mono text-gray-600 group-hover:text-gray-900 transition-colors">
-                  {String(index + 1).padStart(2, '0')}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
                 <p className="text-gray-700 group-hover:text-gray-900 transition-colors">{course}</p>
               </div>

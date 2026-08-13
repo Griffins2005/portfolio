@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { socialUrls, email } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -26,24 +27,23 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-2 sm:gap-3 pt-3 sm:pt-4">
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-900 text-white text-xs sm:text-sm rounded-full">
-                  Data Science
+                  Software Engineering
                 </span>
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700 text-xs sm:text-sm rounded-full">
                   Full-Stack
                 </span>
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700 text-xs sm:text-sm rounded-full">
-                  AI
+                  AI Agents
                 </span>
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700 text-xs sm:text-sm rounded-full">
-                  Blockchain
+                  Data Science
                 </span>
               </div>
 
               <p className="text-base sm:text-lg text-gray-500 pt-2">
-                Information Science (Data Science & Interactive Technology concentration) at Cornell
-                &apos;28 and AI minor. Building
-                accessible, data-driven software with ethical AI and
-                human-centered design.
+                B.S. Information Science at Cornell &apos;28. Recently a software
+                engineering intern at Larsen &amp; Toubro Semiconductor Technologies,
+                building AI agent systems and production full-stack software.
               </p>
             </div>
 
@@ -53,7 +53,7 @@ export default function Home() {
               </p>
               <div className="flex items-center gap-3 sm:gap-4">
                 <a
-                  href="https://github.com/Griffins2005"
+                  href={socialUrls.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-gray-50 hover:bg-gray-900 hover:text-white transition-all"
@@ -62,7 +62,7 @@ export default function Home() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/griffins-kiptanui-374a1a277"
+                  href={socialUrls.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-gray-50 hover:bg-gray-900 hover:text-white transition-all"
@@ -71,7 +71,7 @@ export default function Home() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://x.com/K_Griffins8"
+                  href={socialUrls.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-gray-50 hover:bg-gray-900 hover:text-white transition-all"
@@ -80,7 +80,7 @@ export default function Home() {
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a
-                  href="mailto:gkl39@cornell.edu"
+                  href={`mailto:${email}`}
                   className="p-3 rounded-full bg-gray-50 hover:bg-gray-900 hover:text-white transition-all"
                   aria-label="Email Griffins"
                 >
@@ -128,14 +128,14 @@ export default function Home() {
             <div className="space-y-3 sm:space-y-4 text-gray-600 leading-relaxed text-sm sm:text-base">
               <p>
                 I&apos;m a junior at Cornell University studying Information
-                Science, with a passion for building accessible, data-driven
-                solutions that make a real impact.
+                Science. I interned in semiconductor software at LTSCT and in
+                full-stack product at CRAIIVE, and I teach web development at
+                Cornell Bowers CIS.
               </p>
               <p>
-                My work spans full-stack development, machine learning, and
-                blockchain technology. I believe in creating technology that
-                serves people and communities, grounded in ethical AI principles
-                and human-centered design.
+                My work spans AI agent systems, automation workflows, and production
+                web and mobile apps. I care about building software that is
+                reliable and useful in the real world.
               </p>
             </div>
           </div>
@@ -148,8 +148,8 @@ export default function Home() {
                 </h3>
               </div>
               <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                Building responsive web applications with React, Next.js, Django,
-                and FastAPI. Focus on clean code and excellent user experience.
+                Shipping web and mobile products with React, Next.js, Flutter,
+                FastAPI, and Django — from auth and APIs to production deploys.
               </p>
             </div>
 
@@ -157,24 +157,23 @@ export default function Home() {
               <div className="p-6 sm:p-8 border-2 border-gray-200 rounded-2xl hover:border-gray-900 transition-colors">
                 <div className="mb-3 sm:mb-4">
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-                    Data Science &amp; ML
+                    AI Agents
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                  Developing predictive models and analyzing data to drive
-                  insights with Python and scikit-learn.
+                  Building agent debugging, policy gates, and LangGraph
+                  workflows.
                 </p>
               </div>
 
               <div className="p-6 sm:p-8 border-2 border-gray-200 rounded-2xl hover:border-gray-900 transition-colors">
                 <div className="mb-3 sm:mb-4">
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-                    Blockchain
+                    Data Science
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                  Exploring decentralized applications and smart contracts with
-                  Solidity and Web3.
+                  Modeling, evaluation, and data pipelines in Python.
                 </p>
               </div>
             </div>

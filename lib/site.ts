@@ -38,7 +38,7 @@ export const defaultTitle = `${siteName} | Data Science & Full-Stack Developer`;
 export const tagline = "Data Science · Full-Stack · AI · Machine Learning";
 
 export const defaultDescription =
-  "Portfolio of Griffins Kiptanui Lelgut Too — Cornell Information Science student (’28) concentrating in Data Science with a minor in Interactive Technology and AI. Full-stack development, machine learning, projects, and internships.";
+  "Portfolio of Griffins Kiptanui Lelgut Too — Cornell Information Science student (’28). Software engineering internships, AI systems, and full-stack applications."
 
 export const siteKeywords = [
   "Griffins Kiptanui Lelgut Too",
@@ -48,8 +48,10 @@ export const siteKeywords = [
   "Data Science",
   "Interactive Technology and AI",
   "Machine Learning",
+  "AI Agents",
   "Full-Stack Developer",
   "Software Engineer",
+  "LangGraph",
   "Python",
   "React",
   "Next.js",
